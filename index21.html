@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Văn Phát Nguyện Rèn Luyện Kỹ Năng Cứu Nạn Cứu Hộ - Hạnh Vô Úy Thí</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 3rem 1.5rem;
+            background: radial-gradient(ellipse at bottom, #0f172a 0%, #020617 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Hiệu ứng Ngôi sao & Hạt Kim Quang Vũ trụ */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle var(--duration, 3s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Tinh vân Hào quang Vũ trụ / Thiên nhiên */
+        .nebula {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .nebula-1 {
+            top: -10%;
+            left: 15%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, #f59e0b, #d97706, transparent);
+        }
+
+        .nebula-2 {
+            bottom: -10%;
+            right: 10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, #0284c7, #0369a1, transparent);
+        }
+
+        .nebula-3 {
+            top: 40%;
+            left: -10%;
+            width: 45vw;
+            height: 45vw;
+            background: radial-gradient(circle, #10b981, transparent);
+        }
+
+        /* Card Container Glassmorphism */
+        .card {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: 28px;
+            padding: 3.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7),
+                        0 0 50px rgba(245, 158, 11, 0.12);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(251, 191, 36, 0.18);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.45rem 1.4rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(16, 185, 129, 0.2));
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            line-height: 1.5;
+            background: linear-gradient(135deg, #ffffff 0%, #fef3c7 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.25rem;
+        }
+
+        .opening-salutation {
+            font-family: 'Merriweather', serif;
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: #fde68a;
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid #fbbf24;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            text-align: justify;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin: 2rem 0 1.25rem 0;
+            line-height: 1.5;
+        }
+
+        .section-header .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(245, 158, 11, 0.18);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 10px;
+            color: #fbbf24;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .content-box {
+            background: rgba(30, 41, 59, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .paragraph {
+            font-size: 1.02rem;
+            line-height: 1.85;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        .vow-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .vow-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.85;
+            color: #e2e8f0;
+            font-size: 1.02rem;
+            text-align: justify;
+        }
+
+        .vow-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .vow-item::before {
+            content: "☸";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-size: 1.1rem;
+            top: 0.1rem;
+        }
+
+        .sub-vow-list {
+            list-style: none;
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .sub-vow-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.75;
+            color: #cbd5e1;
+            font-size: 0.98rem;
+            text-align: justify;
+        }
+
+        .sub-vow-item::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-size: 0.8rem;
+            top: 0.1rem;
+        }
+
+        /* Closing Prayer Box */
+        .prayer-closing {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(16, 185, 129, 0.15));
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .prayer-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fef08a;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .prayer-icon {
+            font-size: 2.2rem;
+            margin-top: 0.75rem;
+            display: inline-block;
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.75rem;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            .opening-salutation {
+                font-size: 0.98rem;
+            }
+            .section-header {
+                font-size: 1.1rem;
+            }
+            .vow-item {
+                font-size: 0.96rem;
+                padding-left: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-container" id="stars"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <div class="card">
+        <div class="header">
+            <span class="badge">🌸 Tâm Hương Phát Nguyện</span>
+            <h1>BÀI VĂN PHÁT NGUYỆN RÈN LUYỆN KỸ NĂNG CỨU NẠN CỨU HỘ THUẦN THỤC KHÔNG GIÁN ĐOẠN TRONG VÔ LƯỢNG KIẾP ĐỂ TU TẬP HẠNH VÔ ÚY THÍ CỦA BỒ TÁT QUÁN THẾ ÂM</h1>
+            <div class="opening-salutation">
+                <strong>Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</strong><br>
+                Kính lạy Mười Phương Tam Bảo, Đức Đại Bi Quán Thế Âm Bồ Tát, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:
+            </div>
+        </div>
+
+        <!-- 1. CHIÊM NGƯỠNG HẠNH VÔ ÚY THÍ VÀ SÁM HỐI -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">1</span>
+                <span>Chiêm ngưỡng hạnh Vô Úy Thí và sám hối sự yếu hèn, vụng về trong quá khứ</span>
+            </div>
+            <div class="content-box">
+                <ul class="vow-list">
+                    <li class="vow-item">
+                        <strong>Kính lạy Đức Từ Mẫu Quán Thế Âm!</strong> Đấng có nghìn mắt chiếu soi nỗi khổ trần gian, nghìn tay xòe ra cứu vớt muôn loài trong cơn nguy biến. Ngài là biểu tượng vô thượng của hạnh Vô Úy Thí – ban tặng sự không sợ hãi, che chở sinh mạng chúng sinh giữa lằn ranh sống chết mỏng manh.
+                    </li>
+                    <li class="vow-item">
+                        Con xin cúi đầu sám hối vì trong vô lượng kiếp luân hồi cũng như trong đời này, con đã nhiều lần yếu đuối, nhút nhát, sợ chết, sợ gian khổ; khi gặp người khác lâm vào cảnh hiểm nghèo (tai nạn, đuối nước, hỏa hoạn, thú dữ, dịch bệnh...), do con không có kỹ năng, không có thể lực và thiếu lòng dũng cảm, con đã bất lực đứng nhìn người khác đau đớn, mất mạng trong tuyệt vọng. Con xin dập đầu sám hối trước Tam Bảo!
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. LỜI THỀ ĐẠI NGUYỆN RÈN LUYỆN KỸ NĂNG CỨU HỘ -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">2</span>
+                <span>Lời thề đại nguyện rèn luyện kỹ năng cứu hộ cứu nạn thuần thục trong vô lượng kiếp</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph" style="margin-bottom: 1.25rem; font-style: italic; color: #fde68a;">
+                    Trước tôn nhan Đức Bổn Sư Thích Ca Mâu Ni Phật và Đức Đại Từ Đại Bi Quán Thế Âm Bồ Tát, con xin dốc trọn thân tâm phát lời đại thệ nguyện kiên cố:
+                </p>
+
+                <ul class="vow-list">
+                    <li class="vow-item">
+                        Nguyện cho con từ nay cho đến vô lượng kiếp về sau, đời đời kiếp kiếp sinh ra nơi đâu cũng luôn nỗ lực rèn luyện và làm chủ thuần thục mọi kỹ năng cứu nạn cứu hộ không bao giờ gián đoạn:
+                        <ul class="sub-vow-list">
+                            <li class="sub-vow-item"><strong>Rèn luyện thể lực kiên cường, dẻo dai và bản lĩnh thép:</strong> không ngại gian nan, tập luyện võ thuật phòng vệ, leo trèo vượt chướng ngại vật, bơi lặn dòng nước sâu xiết, tôi luyện sức chịu đựng phi thường để thân thể luôn là công cụ đắc lực cứu người.</li>
+                            <li class="sub-vow-item"><strong>Tinh thông kỹ năng sơ cấp cứu y tế chuẩn xác:</strong> thành thạo hô hấp nhân tạo, cầm máu khẩn cấp, cố định gãy xương, nẹp chấn thương cột sống, cách di chuyển nạn nhân an toàn ra khỏi hiện trường sụp đổ, hỏa hoạn, vực sâu hay tai nạn giao thông; bảo vệ sinh mạng người bị nạn trong từng tích tắc vàng ngọc.</li>
+                            <li class="sub-vow-item"><strong>Trau dồi trí tuệ phán đoán, sự bình tĩnh và phản xạ nhạy bén:</strong> đứng trước mọi tình huống nguy cấp ngặt nghèo, tâm con luôn bất động như núi, sáng suốt phân tích hiện trường để tìm ra phương án cứu người tối ưu nhất mà vẫn bảo toàn an toàn cho lực lượng cứu hộ.</li>
+                        </ul>
+                    </li>
+                    <li class="vow-item">
+                        <strong>Nguyện cho con nuôi dưỡng trái tim Vô Úy, không sợ hãi gian nguy:</strong> học theo hạnh nguyện của Mẹ Hiền Quán Thế Âm, sẵn sàng trở thành người "Anh hùng hiền lành", xông pha vào nơi bão lũ, hỏa hoạn, động đất, thiên tai dịch bệnh để đem lại sự bình an, chở che và xua tan nỗi sợ hãi cho muôn loài chúng sinh.
+                    </li>
+                    <li class="vow-item">
+                        Nguyện cho tâm niệm <em>"Gặp hoạn nạn là sẵn lòng xả thân cứu giúp"</em> in sâu vào từng tế bào, mạch máu và tạng thức của con thành phản xạ tự nhiên trọn đời; không một chút chần chừ, không một niệm so đo tính toán thiệt hơn hay đòi hỏi ơn nghĩa.
+                    </li>
+                    <li class="vow-item">
+                        <strong>Khi cứu được người, con nguyện tuyệt đối không khởi tâm cậy công, kiêu mạn:</strong> xem đó là bổn phận thiêng liêng, nhường hết công đức về cho Tam Bảo và tha nhân, giữ tâm khiêm hạ tột cùng như cát bụi.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. CẦU XIN UY ĐỨC GIA HỘ -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">3</span>
+                <span>Cầu xin uy đức Tam Bảo và Bồ Tát Quán Thế Âm gia hộ</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph">
+                    Cúi xin Mười Phương Chư Phật, Đức Mẹ Đại Bi Quán Thế Âm Bồ Tát và Sư Phụ từ bi chứng minh cho lời đại nguyện sắt son từ đáy lòng con; gia hộ cho con có một thân thể tráng kiện, một tinh thần dũng mãnh, đôi bàn tay khéo léo và một trái tim từ bi vô lượng không biết mỏi mệt; để con trọn đời là cánh tay nối dài chở che cho sự sống của muôn loài, bước đi vững chãi trên con đường Bồ Tát đạo cho đến ngày giác ngộ viên mãn.
+                </p>
+            </div>
+        </div>
+
+        <!-- KẾT NGUYỆN -->
+        <div class="prayer-closing">
+            <div class="prayer-title">Nam Mô Đại Từ Đại Bi Quán Thế Âm Bồ Tát. 🙏</div>
+            <div class="prayer-title" style="margin-top: 0.5rem;">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật. 🙏</div>
+            <div class="prayer-icon">☸</div>
+        </div>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        const starCount = 130;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const size = Math.random() * 2.5 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            
+            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
