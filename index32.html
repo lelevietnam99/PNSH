@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Văn Phát Nguyện Thấm Nhuần Quả Báo Của Tâm Nóng Nảy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 3rem 1.5rem;
+            background: radial-gradient(ellipse at bottom, #111e2e 0%, #060913 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Hiệu ứng Ngôi sao & Hạt Kim Quang Vũ trụ */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle var(--duration, 3s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Tinh vân Hào quang Vũ trụ / Thiên nhiên */
+        .nebula {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .nebula-1 {
+            top: -10%;
+            left: 15%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, #f59e0b, #d97706, transparent);
+        }
+
+        .nebula-2 {
+            bottom: -10%;
+            right: 10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, #ef4444, #b91c1c, transparent);
+        }
+
+        .nebula-3 {
+            top: 40%;
+            left: -10%;
+            width: 45vw;
+            height: 45vw;
+            background: radial-gradient(circle, #10b981, transparent);
+        }
+
+        /* Card Container Glassmorphism */
+        .card {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: 28px;
+            padding: 3.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7),
+                        0 0 50px rgba(245, 158, 11, 0.12);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(251, 191, 36, 0.18);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.45rem 1.4rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2));
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            line-height: 1.5;
+            background: linear-gradient(135deg, #ffffff 0%, #fef3c7 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.25rem;
+        }
+
+        .opening-salutation {
+            font-family: 'Merriweather', serif;
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: #fde68a;
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid #fbbf24;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            text-align: justify;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin: 2rem 0 1.25rem 0;
+            line-height: 1.5;
+        }
+
+        .section-header .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(245, 158, 11, 0.18);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 10px;
+            color: #fbbf24;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .content-box {
+            background: rgba(30, 41, 59, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .paragraph {
+            font-size: 1.02rem;
+            line-height: 1.85;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        .vow-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .vow-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.85;
+            color: #e2e8f0;
+            font-size: 1.02rem;
+            text-align: justify;
+        }
+
+        .vow-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .vow-item::before {
+            content: "☸";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-size: 1.1rem;
+            top: 0.1rem;
+        }
+
+        .sub-vow-list {
+            list-style: none;
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .sub-vow-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.75;
+            color: #cbd5e1;
+            font-size: 0.98rem;
+            text-align: justify;
+        }
+
+        .sub-vow-item::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-size: 0.8rem;
+            top: 0.1rem;
+        }
+
+        /* Closing Prayer Box */
+        .prayer-closing {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(16, 185, 129, 0.15));
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .prayer-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fef08a;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .prayer-icon {
+            font-size: 2.2rem;
+            margin-top: 0.75rem;
+            display: inline-block;
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.75rem;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            .opening-salutation {
+                font-size: 0.98rem;
+            }
+            .section-header {
+                font-size: 1.1rem;
+            }
+            .vow-item {
+                font-size: 0.96rem;
+                padding-left: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-container" id="stars"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <div class="card">
+        <div class="header">
+            <span class="badge">🌸 Tâm Hương Phát Nguyện</span>
+            <h1>BÀI VĂN PHÁT NGUYỆN THẤM NHUẦN QUẢ BÁO CỦA TÂM NÓNG NẢY ĐẾN VÔ LƯỢNG KIẾP VỀ SAU VÀ THỀ NGUYỆN TRỌN ĐỜI GIỮ TÂM NHU HÒA, NHẪN NHỤC TRƯỚC TAM BẢO</h1>
+            <div class="opening-salutation">
+                <strong>Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</strong><br>
+                Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:
+            </div>
+        </div>
+
+        <!-- 1. THÀNH TÂM ĂN NĂN -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">1</span>
+                <span>Thành tâm ăn năn nhận rõ tội lỗi nóng nảy, giận dữ và run sợ trước quả báo khốc liệt</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph" style="margin-bottom: 1.25rem; font-style: italic; color: #fde68a;">
+                    Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng khi soi rọi vào con ma nóng nảy, ngọn lửa sân độc đang âm ỉ thiêu đốt tạng thức con từ vô lượng kiếp đến nay:
+                </p>
+
+                <ul class="vow-list">
+                    <li class="vow-item">
+                        <strong>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này, con đã mang nặng tâm nóng nảy, hung hăng, mất bình tĩnh trước nghịch cảnh:</strong> Hễ có ai nói lời xúc phạm, trái ý, chê bai, hay khi sự việc xảy ra không như ý muốn... là ngọn lửa sân hận trong con lập tức bốc cháy ngùn ngụt; con để cho sự nóng giận chiếm ngự toàn bộ thân tâm, biến con thành kẻ ngu dại và hung ác; con buông lời quát tháo, thóa mạ, chửi bới thô tục làm rách nát tim gan người khác; con đập phá đồ đạc, dùng vũ lực bạo tàn, gieo rắc sợ hãi và đau khổ cho gia đình, bạn bè và xã hội.
+                    </li>
+                    <li class="vow-item">
+                        <strong>Con xin sám hối vì đã bao lần để ngọn lửa sân thiêu rụi toàn bộ rừng cây công đức:</strong> Con nhọc nhằn tu tập, làm việc thiện, ăn chay, tọa thiền bao năm tháng, nhưng chỉ vì một phút tự ái, nóng giận bốc đồng mà con nói lời cay độc, phá hoại tình đoàn kết, hủy hoại uy tín của huynh đệ và Thầy Tổ, đốt sạch phước lành đã dày công vun đắp.
+                    </li>
+                    <li class="vow-item">
+                        <strong>Con xin thành tâm sám hối những cơn nóng nảy đã từng gây ra trong quá khứ, và xin sám hối trước cả những cơn nóng nảy có nguy cơ khởi phát trong tương lai:</strong> Con biết mình còn là phàm phu, tập khí sân hận còn sâu dày, nên con xin phủ phục dưới chân Phật để sám hối tiên lập, xin oai thần của Tam Bảo chấn giữ tâm con trước khi con ma sân kịp trỗi dậy.
+                    </li>
+                    <li class="vow-item">
+                        <strong>Con xin thấm nhuần sâu sắc và rùng mình kinh sợ trước những quả báo tàn khốc của tâm nóng nảy:</strong>
+                        <ul class="sub-vow-list">
+                            <li class="sub-vow-item">Nóng giận là cái ngu, cái ác khiến hành động mất hết giá trị, làm tan nát danh dự, hạnh phúc và chôn vùi cả tương lai;</li>
+                            <li class="sub-vow-item">Quả báo phải mang diện mạo hung dữ, thô kệch, xấu xí, người đời nhìn vào đều sợ hãi, chán ghét và xa lánh;</li>
+                            <li class="sub-vow-item">Chiêu cảm bệnh tật hiểm nghèo về tim mạch, huyết áp, tổn thọ và nội tạng bị thiêu đốt;</li>
+                            <li class="sub-vow-item">Gieo rắc oán thù truyền kiếp, dẫn đến cảnh gia đình tan nát, tù tội gông cùm;</li>
+                            <li class="sub-vow-item">Và nguy hiểm nhất là quả báo đọa lạc vào loài rắn rết độc dữ, ngạ quỷ dữ dằn hoặc rơi thẳng vào địa ngục than hồng, vạc dầu sôi bỏng chịu thống khổ muôn ngàn kiếp!</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p class="paragraph" style="margin-top: 1.25rem; font-style: italic;">
+                    Giờ đây tỉnh ngộ trước sự thật kinh hoàng của nhân quả, con xin đem trọn tính mạng dập đầu mọp sát đất trước Đức Từ Phụ Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ cho đứa con vô minh!
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. LỜI THỀ ĐẠI NGUYỆN -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">2</span>
+                <span>Lời thề đại nguyện thấm nhuần quả báo và trọn đời giữ tâm nhu hòa, nhẫn nhục trong vô lượng kiếp về sau</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph" style="margin-bottom: 1.25rem; font-style: italic; color: #fde68a;">
+                    Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:
+                </p>
+
+                <ul class="vow-list">
+                    <li class="vow-item">
+                        Nguyện cho con từ nay cho đến vô lượng kiếp về sau luôn khắc sâu định lý: <em>Nóng nảy là kẻ thù số một chôn vùi huệ mạng; Nhu hòa, điềm đạm và nhẫn nhục là ngọc báu hộ trì công đức và giải thoát</em>:
+                        <ul class="sub-vow-list">
+                            <li class="sub-vow-item">Tuyệt đối không bao giờ nuôi dưỡng ngọn lửa sân hận, oán hờn hay trả đũa trong lòng;</li>
+                            <li class="sub-vow-item">Xem sự nhẫn nhục trước nghịch cảnh là pháp tu tối thượng, là cơ hội quý báu để thử thách và bào mòn bản ngã.</li>
+                        </ul>
+                    </li>
+                    <li class="vow-item">
+                        <strong>Con nguyện thực hành bí quyết điều phục tâm nóng nảy kiên trì mỗi ngày:</strong>
+                        <ul class="sub-vow-list">
+                            <li class="sub-vow-item">Mỗi đêm quỳ trước tôn nhan Đức Phật, con nguyện lặp lại lời thệ nguyện sắt son: <em>"Cúi xin Phật gia hộ cho con đừng bao giờ nóng giận, dù cho mọi người có xúc phạm, vu khống hay chà đạp con"</em>;</li>
+                            <li class="sub-vow-item">Đứng trước mọi nghịch cảnh, lời chê bai hay điều bất như ý, con nguyện lập tức dừng lại 3 giây, thở sâu, buông lỏng toàn thân, niệm danh hiệu Phật và ra lệnh cho tâm thức phải bình tĩnh, lắng dịu hoàn toàn;</li>
+                            <li class="sub-vow-item">Tuyệt đối không mở miệng nói một lời nào, không đưa ra một quyết định hay hành động nào khi trong tâm còn gợn sóng bực tức, nóng nảy;</li>
+                            <li class="sub-vow-item">Dù người khác có lớn tiếng thô tháo, con nguyện lấy sự trầm tĩnh, từ bi và nụ cười hòa ái để đáp lại, biến sự hung bạo thành dòng nước mát hiền hòa.</li>
+                        </ul>
+                    </li>
+                    <li class="vow-item">
+                        <strong>Con nguyện lấy Tâm Nhu Hòa làm nền tảng vững chắc cho công phu thiền định:</strong>
+                        <ul class="sub-vow-list">
+                            <li class="sub-vow-item">Dùng công phu tọa thiền để lắng đọng tâm thức, dọn sạch những hạt giống sân hận vi tế ẩn nấp trong vô thức;</li>
+                            <li class="sub-vow-item">Càng đi sâu vào các tầng thiền định, tâm hồn càng trở nên mát mẻ, thanh lương, bao dung và vững vàng như núi đá trước gió bão cuộc đời;</li>
+                            <li class="sub-vow-item">Nhập định sâu xa để dứt sạch hoàn toàn mầm mống nóng giận, đạt tới sự bất động an nhiên giải thoát.</li>
+                        </ul>
+                    </li>
+                    <li class="vow-item">
+                        <strong>Nguyện cho con trở thành sứ giả của sự hòa bình và an lạc:</strong>
+                        <ul class="sub-vow-list">
+                            <li class="sub-vow-item">Đi đến đâu cũng đem lại bầu không khí mát lành, an ổn cho những người xung quanh;</li>
+                            <li class="sub-vow-item">Khuyên can, xoa dịu những mối bất hòa, giúp mọi người cùng nhận rõ quả báo của sự nóng nảy để cùng nhau hóa giải hận thù, chung sống trong tình yêu thương và Chánh Pháp.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. CẦU XIN UY ĐỨC GIA HỘ -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">3</span>
+                <span>Cầu xin uy đức Tam Bảo chứng minh và gia hộ</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph">
+                    Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát và Sư Phụ từ bi chứng minh cho tấc lòng sám hối và lời đại thệ nguyện thiết tha tự đáy lòng con; gia hộ cho con nhổ sạch tận gốc rễ chủng tử nóng nảy, hung hăng, sân hận trong tiềm thức; ban cho con dòng suối nước mát Cam Lộ của lòng từ bi vô lượng, để tâm con đời đời kiếp kiếp luôn nhu hòa, trầm tĩnh, nhẫn nhục kiên cố như đất dày, chở che cho muôn loài và vững bước đi tới ngày giác ngộ viên mãn.
+                </p>
+            </div>
+        </div>
+
+        <!-- KẾT NGUYỆN -->
+        <div class="prayer-closing">
+            <div class="prayer-title">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật</div>
+            <div class="prayer-icon">🙏</div>
+        </div>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        const starCount = 130;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const size = Math.random() * 2.5 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            
+            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
