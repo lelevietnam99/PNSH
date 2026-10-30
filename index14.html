@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Văn Sám Hối Lỗi Chủ Quan Khi Lái Xe & Phát Nguyện Chánh Niệm Bảo Vệ Sinh Mạng</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 3rem 1.5rem;
+            background: radial-gradient(ellipse at bottom, #111e2e 0%, #060913 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Hiệu ứng Ngôi sao & Hạt Kim Quang Vũ trụ */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle var(--duration, 3s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Tinh vân Hào quang Vũ trụ / Thiên nhiên */
+        .nebula {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .nebula-1 {
+            top: -10%;
+            left: 15%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, #f59e0b, #d97706, transparent);
+        }
+
+        .nebula-2 {
+            bottom: -10%;
+            right: 10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, #0284c7, #0369a1, transparent);
+        }
+
+        .nebula-3 {
+            top: 40%;
+            left: -10%;
+            width: 45vw;
+            height: 45vw;
+            background: radial-gradient(circle, #10b981, transparent);
+        }
+
+        /* Card Container Glassmorphism */
+        .card {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: 28px;
+            padding: 3.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7),
+                        0 0 50px rgba(245, 158, 11, 0.12);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(251, 191, 36, 0.18);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.45rem 1.4rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(16, 185, 129, 0.2));
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            line-height: 1.5;
+            background: linear-gradient(135deg, #ffffff 0%, #fef3c7 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.25rem;
+        }
+
+        .opening-salutation {
+            font-family: 'Merriweather', serif;
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: #fde68a;
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid #fbbf24;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            text-align: justify;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin: 2rem 0 1.25rem 0;
+            line-height: 1.5;
+        }
+
+        .section-header .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(245, 158, 11, 0.18);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 10px;
+            color: #fbbf24;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .content-box {
+            background: rgba(30, 41, 59, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .paragraph {
+            font-size: 1.02rem;
+            line-height: 1.85;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        .vow-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .vow-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.85;
+            color: #e2e8f0;
+            font-size: 1.02rem;
+            text-align: justify;
+        }
+
+        .vow-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .vow-item::before {
+            content: "☸";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-size: 1.1rem;
+            top: 0.1rem;
+        }
+
+        /* Closing Prayer Box */
+        .prayer-closing {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(16, 185, 129, 0.15));
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .prayer-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fef08a;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .prayer-icon {
+            font-size: 2.2rem;
+            margin-top: 0.75rem;
+            display: inline-block;
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.75rem;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            .opening-salutation {
+                font-size: 0.98rem;
+            }
+            .section-header {
+                font-size: 1.1rem;
+            }
+            .vow-item {
+                font-size: 0.96rem;
+                padding-left: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-container" id="stars"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <div class="card">
+        <div class="header">
+            <span class="badge">🌸 Tâm Hương Phát Nguyện</span>
+            <h1>BÀI VĂN SÁM HỐI TỘI CHỦ QUAN, SUY NGHĨ LUNG TUNG KHI LÁI XE VÀ PHÁT NGUYỆN CHÁNH NIỆM BẢO VỆ SINH MẠNG TRƯỚC TAM BẢO</h1>
+            <div class="opening-salutation">
+                <strong>Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</strong><br>
+                Kính lạy mười phương Tam Bảo, Chư vị Bồ Tát, cùng Sư Phụ từ bi chứng minh cho lòng con:
+            </div>
+        </div>
+
+        <!-- 1. THÀNH TÂM ĂN NĂN -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">1</span>
+                <span>Thành tâm ăn năn và nhận rõ tội lỗi chủ quan, lơ đãng khi điều khiển xe</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph" style="margin-bottom: 1.25rem; font-style: italic; color: #fde68a;">
+                    Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, lòng rùng mình kinh hãi và xấu hổ sâu sắc trước sự vô tâm, hời hợt của chính mình:
+                </p>
+
+                <ul class="vow-list">
+                    <li class="vow-item">
+                        <strong>Con xin cúi đầu sám hối tội chủ quan, tự mãn khi cầm lái:</strong> Đã nhiều lần con ỷ mình tay lái vững vàng, ỷ đường sá quen thuộc mà sinh tâm khinh suất, lơ là; con phóng nhanh, lạng lách, tranh giành đường đi, hoặc vừa lái xe vừa nghe điện thoại, làm việc riêng. Con đã quên mất rằng chỉ một phần trăm giây sơ sẩy là có thể cướp đi sinh mạng của người khác, đẩy bao gia đình vào thảm cảnh tan nát, tang thương.
+                    </li>
+                    <li class="vow-item">
+                        <strong>Con xin sám hối tội suy nghĩ lung tung, để tâm trí trôi dạt trong vọng tưởng:</strong> Khi ngồi sau tay lái, con đã không giữ được sự tỉnh giác, để cho tâm trí mải mê suy nghĩ chuyện được mất hơn thua, tính toán tiền bạc công việc, hay mơ mộng chuyện tình cảm viển vông. Mắt con tuy mở nhìn đường nhưng tâm con lại bị màn sương mù ảo ảnh của vọng tưởng che lấp, không quan sát trọn vẹn tình huống giao thông, biến chiếc xe thành mối nguy cơ tai nạn đe dọa sinh mạng muôn người.
+                    </li>
+                    <li class="vow-item">
+                        Con tự biết đó là hành vi vô trách nhiệm, thiếu lòng từ bi và phạm vào giới luật bảo vệ sự sống của nhà Phật. Nếu có nghiệp chướng trổ ra, con sẽ phải đền mạng và chịu quả báo đau khổ muôn kiếp không cùng. Con xin chí thành dập đầu sám hối trước Tam Bảo!
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. LỜI THỀ PHÁT NGUYỆN -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">2</span>
+                <span>Lời thề phát nguyện giữ chánh niệm và bảo vệ sinh mạng trong vô lượng kiếp</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph" style="margin-bottom: 1.25rem; font-style: italic; color: #fde68a;">
+                    Trước tôn nhan Đức Bổn Sư Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại nguyện kiên cố:
+                </p>
+
+                <ul class="vow-list">
+                    <li class="vow-item">
+                        Nguyện cho con trong kiếp này và muôn đời muôn kiếp về sau, mỗi khi bước lên bất kỳ phương tiện giao thông nào, con luôn khởi tâm tha thiết cầu nguyện chư Phật, chư Thiên gia hộ cho con và tất cả mọi người cùng lưu thông trên đường đều được bình an vô sự.
+                    </li>
+                    <li class="vow-item">
+                        Nguyện cho con luôn giữ tâm thế khiêm tốn, cẩn trọng tuyệt đối, quyết không bao giờ chủ quan: luôn tâm niệm rằng kỹ năng của mình còn nhiều non kém, đường sá luôn tiềm ẩn nguy hiểm bất ngờ để luôn lái xe với tốc độ an toàn, tuân thủ nghiêm ngặt luật lệ giao thông, nhường nhịn người già, trẻ nhỏ và người yếu thế.
+                    </li>
+                    <li class="vow-item">
+                        Nguyện cho con rèn luyện sức mạnh chánh niệm tỉnh giác trong từng giây phút cầm lái: kiên quyết quét sạch mọi suy nghĩ lung tung, dứt bặt mọi vọng tưởng viển vông; khi cầm lái thì toàn bộ tâm trí chỉ tập trung trọn vẹn vào con đường, quan sát tinh tường bốn phương tám hướng, lắng nghe và cảm nhận từng chuyển động của xe để làm chủ mọi tình huống.
+                    </li>
+                    <li class="vow-item">
+                        Nguyện cho con nuôi dưỡng lòng từ bi và hạnh nhẫn nhục khi đi đường: dù gặp người khác đi ẩu, lấn làn hay có hành vi khiêu khích, con nguyện giữ tâm thanh thản, hòa ái, không một chút bực tức hay tranh đua hơn thua; xem việc giữ gìn an toàn cho người đi đường chính là một hạnh tu cứu mạng cao quý.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. CẦU XIN UY ĐỨC GIA HỘ -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">3</span>
+                <span>Cầu xin uy đức từ bi gia hộ</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph">
+                    Cúi xin mười phương Tam Bảo và Sư Phụ từ bi chứng minh lòng thành sám hối của con, gia hộ cho con luôn có đôi mắt sáng suốt, đôi tay chuẩn xác và một trái tim đầy ắp tình thương yêu sự sống; để mỗi chặng đường con đi qua đều đem lại bình an, hạnh phúc cho tha nhân và gieo tạo phước đức sâu dày trên con đường tu tập.
+                </p>
+            </div>
+        </div>
+
+        <!-- KẾT NGUYỆN -->
+        <div class="prayer-closing">
+            <div class="prayer-title">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật</div>
+            <div class="prayer-icon">🙏</div>
+        </div>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        const starCount = 130;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const size = Math.random() * 2.5 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            
+            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>

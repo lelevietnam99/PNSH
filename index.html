@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Mục Tổng Hợp (Index 1 - Index 300)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 3rem 1.5rem;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Hiệu ứng Ngôi sao Vũ trụ */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle var(--duration, 3s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Tinh vân Vũ trụ */
+        .nebula {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .nebula-1 {
+            top: -10%;
+            left: -10%;
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(circle, #6366f1, #3b82f6, transparent);
+        }
+
+        .nebula-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 65vw;
+            height: 65vw;
+            background: radial-gradient(circle, #8b5cf6, #ec4899, transparent);
+        }
+
+        .nebula-3 {
+            top: 40%;
+            left: 30%;
+            width: 45vw;
+            height: 45vw;
+            background: radial-gradient(circle, #f59e0b, transparent);
+            opacity: 0.2;
+        }
+
+        /* Container Glassmorphism */
+        .card {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 28px;
+            padding: 3.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6),
+                        0 0 50px rgba(139, 92, 246, 0.15);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.45rem 1.4rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.25));
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            color: #c084fc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            line-height: 1.4;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            font-size: 0.98rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Controls: Search & Jump Filter */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.25rem 1rem 3rem;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            color: #f8fafc;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            background: rgba(30, 41, 59, 0.9);
+            border-color: #a855f7;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .quick-jump {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .jump-btn {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            color: #cbd5e1;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .jump-btn:hover, .jump-btn.active {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3));
+            border-color: #a855f7;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+        }
+
+        /* Grid Layout */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 1.25rem;
+            background: rgba(30, 41, 59, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            text-decoration: none;
+            color: #e2e8f0;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #38bdf8, #a855f7);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-2px);
+            background: rgba(30, 41, 59, 0.85);
+            border-color: rgba(168, 85, 247, 0.35);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
+                        0 0 15px rgba(168, 85, 247, 0.15);
+        }
+
+        .link-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .num-badge {
+            font-family: 'Merriweather', serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #38bdf8;
+            width: 32px;
+            height: 32px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .link-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .arrow-icon {
+            color: #c084fc;
+            font-size: 1rem;
+            transition: transform 0.25s ease;
+        }
+
+        .link-card:hover .arrow-icon {
+            transform: translateX(4px);
+            color: #f472b6;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #94a3b8;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.75rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .links-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 0.75rem;
+            }
+            .link-card {
+                padding: 0.75rem 0.9rem;
+            }
+            .num-badge {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+            .link-title {
+                font-size: 0.88rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-container" id="stars"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <div class="card">
+        <div class="header">
+            <span class="badge">Tổng Hợp Đầy Đủ</span>
+            <h1>DANH MỤC TRANG INDEX 1 - INDEX 300</h1>
+            <p class="subtitle">Tra cứu và truy cập nhanh các trang từ index1.html đến index300.html</p>
+        </div>
+
+        <div class="controls">
+            <!-- Thanh tìm kiếm -->
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Nhập số trang hoặc từ khóa (ví dụ: 15, index120)...">
+            </div>
+
+            <!-- Nút nhảy nhanh khoảng -->
+            <div class="quick-jump">
+                <button class="jump-btn active" onclick="filterRange(1, 300, this)">Tất cả (1-300)</button>
+                <button class="jump-btn" onclick="filterRange(1, 50, this)">1 - 50</button>
+                <button class="jump-btn" onclick="filterRange(51, 100, this)">51 - 100</button>
+                <button class="jump-btn" onclick="filterRange(101, 150, this)">101 - 150</button>
+                <button class="jump-btn" onclick="filterRange(151, 200, this)">151 - 200</button>
+                <button class="jump-btn" onclick="filterRange(201, 250, this)">201 - 250</button>
+                <button class="jump-btn" onclick="filterRange(251, 300, this)">251 - 300</button>
+            </div>
+        </div>
+
+        <!-- Lưới danh sách link -->
+        <div class="links-grid" id="linksContainer"></div>
+    </div>
+
+    <script>
+        // Tạo hiệu ứng sao vũ trụ
+        const starsContainer = document.getElementById('stars');
+        const starCount = 130;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2.5 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            starsContainer.appendChild(star);
+        }
+
+        // Khởi tạo danh sách 300 trang index
+        const totalItems = 300;
+        const container = document.getElementById('linksContainer');
+        const items = [];
+
+        for (let i = 1; i <= totalItems; i++) {
+            items.push({
+                id: i,
+                filename: `index${i}.html`,
+                title: `Index ${i}`
+            });
+        }
+
+        function renderItems(list) {
+            container.innerHTML = '';
+            if (list.length === 0) {
+                container.innerHTML = `<div class="no-results">Không tìm thấy trang phù hợp.</div>`;
+                return;
+            }
+
+            const fragment = document.createDocumentFragment();
+            list.forEach(item => {
+                const a = document.createElement('a');
+                a.href = item.filename;
+                a.className = 'link-card';
+                a.innerHTML = `
+                    <div class="card-left">
+                        <div class="num-badge">${item.id}</div>
+                        <span class="link-title">${item.filename}</span>
+                    </div>
+                    <span class="arrow-icon">➔</span>
+                `;
+                fragment.appendChild(a);
+            });
+            container.appendChild(fragment);
+        }
+
+        // Lần đầu hiển thị đầy đủ 300 items
+        renderItems(items);
+
+        // Lọc theo khoảng
+        let currentMin = 1;
+        let currentMax = 300;
+
+        function filterRange(min, max, btnElement) {
+            currentMin = min;
+            currentMax = max;
+
+            document.querySelectorAll('.jump-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+
+            applyFilters();
+        }
+
+        // Tìm kiếm theo ô input
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', applyFilters);
+
+        function applyFilters() {
+            const query = searchInput.value.trim().toLowerCase();
+            const filtered = items.filter(item => {
+                const inRange = item.id >= currentMin && item.id <= currentMax;
+                if (!inRange) return false;
+
+                if (!query) return true;
+                return item.filename.toLowerCase().includes(query) || item.id.toString() === query;
+            });
+            renderItems(filtered);
+        }
+    </script>
+</body>
+</html>

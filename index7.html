@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Văn Sám Hối Tâm Kiêu Mạn & Phát Nguyện Gột Rửa Tâm Hồn</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 3rem 1.5rem;
+            background: radial-gradient(ellipse at bottom, #1e112a 0%, #080410 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Hiệu ứng Ngôi sao & Hạt Kim Quang Vũ trụ */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle var(--duration, 3s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Tinh vân Hào quang Vũ trụ / Thiên nhiên */
+        .nebula {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .nebula-1 {
+            top: -10%;
+            left: 15%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, #f59e0b, #d97706, transparent);
+        }
+
+        .nebula-2 {
+            bottom: -10%;
+            right: 10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, #e11d48, #9f1239, transparent);
+        }
+
+        .nebula-3 {
+            top: 40%;
+            left: -10%;
+            width: 45vw;
+            height: 45vw;
+            background: radial-gradient(circle, #8b5cf6, transparent);
+        }
+
+        /* Card Container Glassmorphism */
+        .card {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(23, 15, 30, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: 28px;
+            padding: 3.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7),
+                        0 0 50px rgba(245, 158, 11, 0.12);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(251, 191, 36, 0.18);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.45rem 1.4rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(225, 29, 72, 0.2));
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            line-height: 1.5;
+            background: linear-gradient(135deg, #ffffff 0%, #fef3c7 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.25rem;
+        }
+
+        .opening-salutation {
+            font-family: 'Merriweather', serif;
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: #fde68a;
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid #fbbf24;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            text-align: justify;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin: 2rem 0 1.25rem 0;
+            line-height: 1.5;
+        }
+
+        .section-header .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(245, 158, 11, 0.18);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 10px;
+            color: #fbbf24;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .content-box {
+            background: rgba(35, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .paragraph {
+            font-size: 1.02rem;
+            line-height: 1.85;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        .vow-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .vow-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.85;
+            color: #e2e8f0;
+            font-size: 1.02rem;
+            text-align: justify;
+        }
+
+        .vow-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .vow-item::before {
+            content: "☸";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-size: 1.1rem;
+            top: 0.1rem;
+        }
+
+        /* Closing Prayer Box */
+        .prayer-closing {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(225, 29, 72, 0.15));
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .prayer-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fef08a;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .prayer-icon {
+            font-size: 2.2rem;
+            margin-top: 0.75rem;
+            display: inline-block;
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.75rem;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            .opening-salutation {
+                font-size: 0.98rem;
+            }
+            .section-header {
+                font-size: 1.1rem;
+            }
+            .vow-item {
+                font-size: 0.96rem;
+                padding-left: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-container" id="stars"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+    <div class="nebula nebula-3"></div>
+
+    <div class="card">
+        <div class="header">
+            <span class="badge">🌸 Tâm Hương Phát Nguyện</span>
+            <h1>BÀI VĂN SÁM HỐI TÂM KIÊU MẠN, KHEN THẦM KHI TIẾN TU VÀ CUỒNG VỌNG THẤY HƠN THẦY TRƯỚC TAM BẢO</h1>
+            <div class="opening-salutation">
+                <strong>Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</strong><br>
+                Kính lạy mười phương Tam Bảo, Chư vị Bồ Tát, cùng Sư Phụ tôn kính chứng minh cho lòng con:
+            </div>
+        </div>
+
+        <!-- 1. THÀNH TÂM ĂN NĂN -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">1</span>
+                <span>Thành tâm ăn năn và nhận rõ tội chướng ngút trời</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph" style="margin-bottom: 1.25rem; font-style: italic; color: #fde68a;">
+                    Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, ruột gan bàng hoàng, xấu hổ và kinh sợ tột cùng trước sự xấu xa, bẩn thỉu của chính tâm hồn mình:
+                </p>
+
+                <ul class="vow-list">
+                    <li class="vow-item">
+                        <strong>Con xin sám hối tội lỗi khen thầm khi có chút tiến tu:</strong> Khi con ngồi thiền được chút lắng đọng, khi con học được chút đạo lý hay làm được chút việc phước, thay vì phải cẩn trọng thấy mình chỉ là hạt cát giữa sa mạc, thì cái ngã kiêu mạn kịch độc trong con lại âm thầm nhúc nhích tự khen mình, tự mãn, tự cho là mình hay, mình giỏi.
+                    </li>
+                    <li class="vow-item">
+                        <strong>Con xin sám hối tội lỗi thấy mình hơn người, coi thường huynh đệ:</strong> Từ cái tâm tự khen mình, con đã ngấm ngầm khởi tâm so sánh, thấy mình hơn hẳn những người xung quanh; rồi từ đó khởi tâm coi thường, chê bai những người huynh đệ còn vụng về, chậm tiến. Con đã quên mất rằng đáng lẽ con phải dùng tình thương để bao dung, nâng đỡ họ, chứ không phải giẫm đạp họ để nâng cái ngã hèn hạ của mình lên.
+                    </li>
+                    <li class="vow-item">
+                        <strong>Con xin dập đầu sám hối trọng tội ngông cuồng, đại nghịch khi dám thấy mình hơn cả Thầy:</strong> Kính lạy Sư Phụ, nếu không có Phật, không có giáo Pháp của Thầy soi rọi, con hôm nay chỉ là một kẻ mù lòa trôi lăn trong vũng lầy tội lỗi của thế gian. Ơn Thầy khai tâm mở trí cao dày như trời biển, vậy mà trong những phút giây u mê tột đỉnh của vô minh bản ngã, con đã dám khởi tâm so đo, phê phán việc làm của Thầy, ngông cuồng cho rằng mình nhìn xa hơn Thầy, sâu sắc hơn Thầy, giỏi hơn Thầy. Đó là tội phản bội, vong ân bội nghĩa, là tội kiêu mạn ngông cuồng ghê gớm nhất có thể đọa con thẳng xuống địa ngục và làm gãy đổ hoàn toàn sự nghiệp tu hành. Con xin dập đầu sám hối tội đại nghịch này trước mười phương Tam Bảo và trước Sư Phụ!
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. LỜI THỀ PHÁT NGUYỆN -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">2</span>
+                <span>Lời thề phát nguyện gột rửa tâm hồn trong vô lượng kiếp</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph" style="margin-bottom: 1.25rem; font-style: italic; color: #fde68a;">
+                    Con xin phát nguyện trước mười phương Tam Bảo và chư Hộ Pháp Long Thần:
+                </p>
+
+                <ul class="vow-list">
+                    <li class="vow-item">
+                        Từ nay cho đến vô lượng kiếp về sau, mỗi ngày con nguyện luôn quán chiếu và khắc sâu vào tận xương tủy câu thần chú: <em>"Con chỉ là cát bụi, là cỏ rác tầm thường"</em>.
+                    </li>
+                    <li class="vow-item">
+                        Bất kể ngày sau con có tu tập đạt được định lực cao sâu, có mở mang trí tuệ hay làm được muôn ngàn Phật sự vĩ đại đến đâu, con nguyện dứt bặt mọi tâm niệm tự khen mình; hễ mầm mống tự mãn vừa nhúc nhích khởi lên là con lập tức dùng gươm báu trí tuệ chém đứt ngay tức khắc.
+                    </li>
+                    <li class="vow-item">
+                        Đối với huynh đệ và muôn loài chúng sinh, con nguyện luôn tìm kiếm ưu điểm của người để tôn trọng, kính quý và học hỏi; khi thấy lỗi lầm của người thì chỉ khởi tâm xót thương và tìm cách giúp đỡ, tuyệt đối không bao giờ khởi tâm coi thường, so đo hơn thua.
+                    </li>
+                    <li class="vow-item">
+                        Đối với Thầy Tổ, con nguyện đời đời kiếp kiếp giữ trọn lòng tôn kính tuyệt đối, một lòng trung thành thừa hành, luôn thấy trí tuệ và ân đức của Thầy cao vời vợi như núi Thái Sơn, còn sự hiểu biết của con chỉ là giọt nước nhỏ nhoi; nguyện nương tựa nơi Thầy để gọt giũa bản ngã cho đến ngày vô ngã hoàn toàn.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. CẦU XIN UY ĐỨC GIA HỘ -->
+        <div class="section">
+            <div class="section-header">
+                <span class="icon">3</span>
+                <span>Cầu xin uy đức Tam Bảo và Thầy Tổ gia hộ</span>
+            </div>
+            <div class="content-box">
+                <p class="paragraph">
+                    Cúi xin mười phương Tam Bảo và Sư Phụ từ bi xót thương, chứng minh cho lời sám hối chân thành từ đáy lòng con, gia hộ cho con tiêu trừ nghiệp chướng kiêu mạn, giữ được tâm khiêm hạ tột cùng như đất bụi để bước đi vững chắc trên con đường Chánh Pháp.
+                </p>
+            </div>
+        </div>
+
+        <!-- KẾT NGUYỆN -->
+        <div class="prayer-closing">
+            <div class="prayer-title">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật</div>
+            <div class="prayer-icon">🙏</div>
+        </div>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        const starCount = 130;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const size = Math.random() * 2.5 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            
+            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
