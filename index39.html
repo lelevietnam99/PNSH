@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Đại Thệ Nguyện: Giữ Tròn Chánh Ngữ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #030008;
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Universe Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.8;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .nebula {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(15, 12, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            color: #fef08a;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5), 0 0 20px rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(254, 240, 138, 0.2);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .namo {
+            text-align: center;
+            font-weight: 600;
+            color: #fef08a;
+            font-size: 1.15rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <h1>🌸 Toàn văn Bài Đại Thệ Nguyện: Thấm Nhuần Quả Báo Của Việc Không Nói Vừa Đủ, Bệnh Nói Nhiều Nói Thừa Đến Vô Lượng Kiếp Về Sau Và Thề Nguyền Giữ Tròn Chánh Ngữ Trước Tam Bảo</h1>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</p>
+        
+        <p>Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:</p>
+
+        <h2>1. Thành tâm sám hối nhận rõ tội lỗi không biết nói vừa đủ, bệnh nói nhiều nói dai và run sợ trước quả báo khốc liệt</h2>
+        
+        <p>Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng khi soi rọi lại cội rễ khẩu nghiệp ô uế, thói quen bép xép và căn bệnh nói nhiều, nói dai, nói thừa đang ngấm ngầm làm tiêu tan phước đức của con từ vô lượng kiếp đến nay:</p>
+        
+        <ul>
+            <li>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này, con đã mắc bệnh nói nhiều, nói dài, nói dai, nói thừa, không biết nói vừa đủ:
+                <ul>
+                    <li>Con để cho tâm hồn loạn động, lăng xăng, háo thắng chi phối cái miệng; hễ mở miệng là nói thao thao bất tuyệt, nói tranh phần người khác, cướp lời tha nhân, bắt người xung quanh phải gồng mình chịu đựng sự mệt mỏi, nhàm chán mà con không hề hay biết;</li>
+                    <li>Người ta đã hiểu, đã mệt mỏi mà con vẫn cứ lặp đi lặp lại một ý, nói dông nói dài biến câu chuyện thành sự tra tấn, gây hoảng sợ và bực bội cho gia đình, bạn bè và huynh đệ.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì tâm lý khoe khoang, bép xép làm rò rỉ hết phước báu:
+                <ul>
+                    <li>Hễ làm được chút việc thiện, cúng dường được chút tịnh tài hay ngồi thiền thấy chút thanh tịnh là cái miệng con ngứa ngáy muốn đem đi kể lể, khoe khoang khắp nơi để mong cầu lời khen ngợi; con đã vô minh đem cái miệng đổ sạch mọi công đức mồ hôi nước mắt đã tích tụ;</li>
+                    <li>Con không giữ được sự kín đáo, bép xép tiết lộ điều riêng tư của người khác, nói lời vô ích, vô thưởng vô phạt, tào lao nhảm nhí làm bẩn tâm hồn mình và làm mất thì giờ quý báu của tha nhân.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì lời nói chưa chân thật, chuẩn xác và thiếu từ bi: Đôi khi vì nói quá nhiều nên lời nói biến thành nói dốc, thêm bớt, phóng đại sự thật, buông lời đùa cợt cợt nhả hoặc vô tình châm chọc xúc phạm người khác, tạo nên vô số oan gia trái chủ từ lời ăn tiếng nói.</li>
+            <li>Con xin thấm nhuần sâu sắc và rùng mình kinh sợ trước những quả báo tàn khốc của việc không biết nói vừa đủ:
+                <ul>
+                    <li>Kẻ nói nhiều rỗng tuếch thì tự đánh mất phẩm giá, bị người đời khinh khi, xa lánh, coi thường như kẻ bất tài vô dụng;</li>
+                    <li>Lời nói bị mất hết trọng lượng, kiếp sau tái sinh làm kẻ vô phước hèn mọn, mở miệng nói điều chân lý cũng không một ai đoái hoài, lắng nghe hay tin tưởng;</li>
+                    <li>Nói nhiều làm tiêu hao cạn kiệt nguyên khí và phước đức, chiêu cảm quả báo làm ăn lụn bại, gia cảnh nghèo nàn cơ cực;</li>
+                    <li>Nghiệp báo dội lại nơi thân xác: phải chịu quả báo đớ lưỡi, thụt lưỡi, nói ngọng, nghẹn lời hoặc bị á khẩu câm nín suốt đời;</li>
+                    <li>Nếu dùng lời nói nhiều làm tổn hại đạo tâm tha nhân thì phải đọa lạc vào loài súc sinh tru tréo sủa bậy, hoặc rơi vào địa ngục rút lưỡi chịu cực hình muôn ngàn kiếp!</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Giờ đây tỉnh ngộ trước sự nghiêm minh của nhân quả, con xin đem trọn thân mạng dập đầu mọp sát đất trước Đức Từ Phụ Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ cho đứa con tội lỗi dại khờ!</p>
+
+        <h2>2. Lời thề đại nguyện thấm nhuần quả báo, trọn đời giữ gìn Chánh Ngữ, nói vừa đủ và quý trọng lời nói trong vô lượng kiếp về sau</h2>
+
+        <p>Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:</p>
+
+        <ul>
+            <li>Nguyện cho con từ nay cho đến vô lượng kiếp về sau luôn khắc sâu định lý: Lời nói quý như vàng bạc, thà im lặng sâu sắc để người nể phục còn hơn nói nhiều mà rỗng tuếch; Nói vừa đủ là Chánh Ngữ trí tuệ, nói thừa một lời là Tà ngữ tổn phước vô biên:
+                <ul>
+                    <li>Tuyệt đối xem chiếc miệng là cửa ải sinh tử, kiên quyết khóa chặt thói quen bép xép, nói nhảm, nói dai;</li>
+                    <li>Hễ chuẩn bị mở miệng, con nguyện luôn tự nhắc mình: "Lời này có ích lợi không? Có chân thật không? Có hợp thời không? Đã nói vừa đủ hay chưa?".</li>
+                </ul>
+            </li>
+            <li>Con nguyện huân tập NGHỆ THUẬT NÓI VỪA ĐỦ VÀ BIẾT IM LẶNG LẮNG NGHE:
+                <ul>
+                    <li>Trong mọi cuộc đàm đạo, giảng giải hay trò chuyện thường nhật, nguyện luôn tinh tế canh chừng tâm trạng người nghe: hễ thấy người ta đã hiểu, đã nắm được ý là lập tức dừng lại, chuyển đề tài hoặc giữ sự im lặng thanh tịnh, tuyệt đối không nói thêm dù chỉ một câu thừa thãi;</li>
+                    <li>Khi được ai khen ngợi mình nói hay hoặc hiểu biết, con nguyện lập tức cảnh giác, hạ tâm khiêm tốn và biết im lặng đúng lúc, không bao giờ khoái chí mà ba hoa nói tiếp;</li>
+                    <li>Nguyện rèn luyện đức tính biết lắng nghe chân thành, nhường lời cho người khác, tôn trọng ý kiến tha nhân, dứt khoát không bao giờ cướp lời hay nói lấn át ai.</li>
+                </ul>
+            </li>
+            <li>Con nguyện giữ gìn PHƯỚC ĐỨC VÀ SỰ KÍN ĐÁO TUYỆT ĐỐI:
+                <ul>
+                    <li>Làm phước, cúng dường, phụng sự hay tu tập thiền định có kết quả đến đâu, con nguyện khóa chặt miệng lại, giữ kín như bưng, không khoe khoang một lời, đem toàn bộ công đức hồi hướng về Vô Thượng Bồ Đề để phước báu được tròn đầy, bền vững;</li>
+                    <li>Tuyệt đối không bàn tán chuyện riêng tư của thiên hạ, không truyền bá tin đồn thất thiệt, không nói lời hai lưỡi, dệt thêu hay chửi rủa;</li>
+                    <li>Chỉ mở miệng khi cần tán thán Tam Bảo, chia sẻ đạo lý Chánh Pháp, an ủi người đau khổ và khuyên răn muôn loài hướng thiện.</li>
+                </ul>
+            </li>
+            <li>Con nguyện lấy Tâm Tĩnh Lặng Ít Nói làm bệ phóng cho công phu Thiền Định:
+                <ul>
+                    <li>Giảm bớt nói năng bên ngoài để dập tắt những xung động lăng xăng nơi vỏ não, quay về quán chiếu hơi thở nơi bụng dưới;</li>
+                    <li>Giữ cho thân tâm an định, rỗng rang như hư không, dễ dàng tiến sâu vào Chánh niệm và Chánh định vô ngã, khai mở trí tuệ Bát Nhã thuần khiết.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cầu xin uy đức Tam Bảo chứng minh và gia hộ</h2>
+
+        <p>Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát và Sư Phụ từ bi chứng minh cho tấc lòng sám hối và lời đại thệ nguyện thiết tha sắt son tự đáy lòng con; gia hộ cho con tiêu trừ sạch sẽ tập khí nói nhiều, nói dai, nói thừa đã huân tập từ vô lượng kiếp; ban cho con một tâm hồn trầm tĩnh sâu sắc, trí tuệ phân minh và khẩu khí từ ái, để mỗi lời con nói ra đều là Chánh Ngữ chân thật, vừa đủ, đượm nhuần hương thơm đạo đức, mang lại an lạc cho muôn người và cùng muôn loài viên thành Vô Thượng Giác Ngộ.</p>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật. 🙏</p>
+    </div>
+</body>
+</html>

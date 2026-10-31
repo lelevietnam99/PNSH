@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Đại Thệ Nguyện: Cẩn Thận Đúng Ý Phật Trước Khi Thọ Giới</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #030008;
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Universe Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.8;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .nebula {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(15, 12, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            color: #fef08a;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5), 0 0 20px rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #fbbf24;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(254, 240, 138, 0.2);
+            padding-bottom: 20px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .namo {
+            text-align: center;
+            font-weight: 600;
+            color: #fef08a;
+            font-size: 1.15rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .subtitle {
+                font-size: 1.05rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <h1>🌸 Toàn văn Bài Đại Thệ Nguyện: Cầu Xin Phật Gia Hộ Thật Nhiều, Cẩn Thận Từng Chút Trong Từng Việc Làm Đúng Ý Phật Trước Khi Thọ Giới Và Nguyện Giữ Tròn Giới Đức Đến Vô Lượng Kiếp Về Sau</h1>
+        
+        <div class="subtitle">BÀI ĐẠI THỆ NGUYỆN: CẦU PHẬT GIA HỘ, CẨN THẬN TỪNG CHÚT ĐÚNG Ý PHẬT TRƯỚC KHI THỌ GIỚI ĐẾN VÔ LƯỢNG KIẾP</div>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</p>
+        
+        <p>Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, Chư Giới Sư Truyền Giới, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:</p>
+
+        <h2>1. Thành tâm sám hối sự khinh suất, cẩu thả trong từng việc nhỏ và run sợ trước quả báo bước lên giới đàn mà tâm chưa thuần khiết</h2>
+        
+        <p>Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng trước ngưỡng cửa thiêng liêng của Giới Đàn khi soi rọi lại vô số lỗi lầm, sơ thất và tập khí buông lung của con từ vô lượng kiếp đến nay:</p>
+        
+        <ul>
+            <li>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này, con đã mang nặng tâm cẩu thả, khinh suất, xem thường những lỗi lầm nhỏ nhặt:
+                <ul>
+                    <li>Con chưa khắc sâu lời Phật dạy về việc phải thấy sự nguy hiểm khôn lường trong từng vi tế sai sót; con đã từng hành động tùy tiện, đặt để đồ đạc bừa bãi, cử chỉ thô tháo, lời nói thiếu suy xét, để xảy ra những sơ suất làm phương hại đến đại chúng và làm tổn giảm oai nghi thanh tịnh;</li>
+                    <li>Con run sợ khi nhận ra rằng: chính thói quen xem nhẹ việc nhỏ đã tích tụ thành ngọn núi nghiệp chướng, làm thủng lưới giới thể mà con không hề hay biết.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì tâm buông lung nơi ý niệm và sự tự mãn nông cạn:
+                <ul>
+                    <li>Con để cho tâm ý lăng xăng chạy theo vọng trần, khởi sinh những niệm bất thiện, phân biệt hơn thua, kiêu mạn, lười biếng mà không kịp thời tỉnh giác dập tắt ngay từ trong trứng nước;</li>
+                    <li>Đã có lúc con tưởng mình tu hành đàng hoàng, tự cho mình trong sạch mà không thấy rằng vô minh nghiệp thức sâu kín vẫn còn rình rập, chực chờ kéo ngã huệ mạng của con bất cứ lúc nào.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì tâm chưa đủ sự tha thiết, cung kính tuyệt đối trước Giới Pháp của Như Lai:
+                <ul>
+                    <li>Con đã từng nghĩ về việc thọ giới một cách đơn giản theo hình thức thế gian, chưa cảm nhận hết sự thiêng liêng rung chuyển trời đất của một Lời Đại Thệ Nguyện trước mười phương Tam Bảo;</li>
+                    <li>Con sợ hãi tột cùng trước quả báo: nếu bước lên Giới đàn nhận lãnh Giới thể mà thân tâm còn ô uế, giới đức còn non kém, thọ giới rồi mà buông lung làm ô uế màu áo giải thoát, thì phước đức tiêu tan sạch bách, đọa lạc vào các tầng địa ngục A-tỳ hoặc muôn kiếp làm loài súc sinh đền trả nợ tín thí của đàn na!</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Giờ đây quỳ trước tòa sen thanh tịnh, con xin đem trọn thân mạng dập đầu mọp sát đất trước Đức Bổn Sư Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ, rửa sạch mọi cấu uế tội lỗi trong tâm can con!</p>
+
+        <h2>2. Lời thề đại nguyện cầu xin Phật gia hộ thật nhiều, cẩn trọng từng chút làm đúng ý Phật trước khi thọ giới và trọn đời giữ giới kiên cố</h2>
+
+        <p>Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:</p>
+
+        <ul>
+            <li>Con nguyện DẬP ĐẦU ĐẢNH LỄ, TÔN KÍNH PHẬT TUYỆT ĐỐI VÀ XIN CHƯ PHẬT GIA HỘ THẬT NHIỀU:
+                <ul>
+                    <li>Khắc sâu định lý: Sức phàm con mỏng manh yếu ớt, chỉ có thần lực thiêng liêng của mười phương Chư Phật mới là chiếc khiên kim cương bảo bọc cho tâm con không bao giờ sa ngã;</li>
+                    <li>Ngày đêm con tha thiết quỳ lạy Phật, dâng trọn niềm tôn kính tuyệt đối không bờ bến lên Đức Từ Phụ Thích Ca Mâu Ni Phật, mười phương Chư Phật, Chư Bồ Tát, Chư Hiền Thánh Tăng và Sư Phụ;</li>
+                    <li>Cúi xin Chư Phật phóng luồng từ quang thanh tịnh bao bọc lấy tâm thức con, xua tan mọi ma chướng cản trở, giữ chặt tâm con trong Chánh niệm, giúp con vượt qua mọi lúc yếu lòng, bóp nghẹt mọi cơ hội phạm lỗi từ trong trứng nước.</li>
+                </ul>
+            </li>
+            <li>Con nguyện THỰC HÀNH SỰ CẨN THẬN, CHU ĐÁO TỪNG CHÚT TRONG TỪNG VIỆC NHỎ ĐÚNG Ý PHẬT NHẤT TRƯỚC KHI THỌ GIỚI:
+                <ul>
+                    <li>Nguyện soi rọi và cẩn trọng trong từng bước chân, thế đứng, ánh mắt, lời ăn tiếng nói, cách cầm nắm và đặt để từng vật dụng của Tam Bảo;</li>
+                    <li>Luôn suy nghĩ thấu đáo trước khi làm, thấy trước mọi rủi ro sơ suất để phòng ngừa cho mình và cho huynh đệ;</li>
+                    <li>Mỗi khi chuẩn bị khởi tâm hay hành động bất cứ điều gì, con nguyện luôn dừng lại tự hỏi lương tâm: "Việc này có đúng với tâm nguyện của Phật không? Có làm Phật và Sư Phụ hoan hỷ không? Có mang lại an lạc giải thoát cho chúng sinh không?" – hễ thấy việc làm đúng ý Phật thì con quyết tử dấn thân, việc gì trái ý Phật thì dứt khoát không bao giờ đụng tới.</li>
+                </ul>
+            </li>
+            <li>Con nguyện KHẮC CỐT GHI TÂM: THỌ GIỚI LÀ LỜI THỀ THIÊNG LIÊNG TRƯỚC TRỜI ĐẤT, NGUYỆN GIỮ GIỚI TRỌN ĐỜI VÀ SUỐT MUÔN KIẾP VỀ SAU:
+                <ul>
+                    <li>Khi quỳ trước Tam Sư Thất Chứng và bước lên Giới Đàn thiêng liêng, con nguyện đem trọn tính mạng dâng lên lời thề trung kiên với Giới Pháp;</li>
+                    <li>Không chỉ giữ giới trong 3 ngày nơi Giới đàn, mà nguyện gìn giữ ngọn đèn Giới đức sáng ngời suốt 30 năm, 300 năm và suốt 30 kiếp luân hồi;</li>
+                    <li>Quyết tâm rèn luyện ý chí sắt đá, ngày ngày hun đúc tâm nguyện, không để hoàn cảnh hay thời gian làm phai nhạt lời thề ban đầu.</li>
+                </ul>
+            </li>
+            <li>Con nguyện ĐẮC GIỚI TẬN CHIỀU SÂU CỦA NỘI TÂM THANH THẢN VÀ KHIÊM HẠ TUYỆT ĐỐI:
+                <ul>
+                    <li>Quyết không giữ giới bằng hình thức khô cứng, không biến việc giữ giới thành bản ngã để đi bắt bẻ hay coi thường người khác;</li>
+                    <li>Càng giữ giới tinh nghiêm, tâm con nguyện càng hiền lành, nhu hòa, từ ái, khiêm tốn như cát bụi dưới chân mọi người;</li>
+                    <li>Quyết tâm đưa Giới Pháp thấu sâu vào tâm ý, giữ cho tâm luôn thanh thản, rỗng rang, không gợn một bóng mây dục vọng hay sân hận;</li>
+                    <li>Lấy Giới Luật thanh tịnh làm bệ phóng kim cương cho Định lực vững vàng và Tuệ giác Bát Nhã bừng nở, trở thành người chân tu đức hạnh vẹn toàn làm rạng danh Tam Bảo.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cầu xin uy đức Tam Bảo chứng minh và gia hộ</h2>
+
+        <p>Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát, Lịch đại Tổ Sư, Chư Giới Sư Tôn Đức và Sư Phụ từ bi phóng ánh từ quang chứng minh cho tấc lòng sám hối và lời đại thệ nguyện thiết tha sắt son tự đáy lòng con; gia hộ cho con tiêu trừ sạch sẽ mọi chướng duyên ám chướng, thân tâm thanh tịnh sáng trong như ngọc quý; ban cho con sự cẩn trọng tinh tế tột cùng, ý chí kiên định như kim cương và phước duyên thù thắng để con đắc trọn vẹn Giới thể thanh tịnh nơi Giới đàn, đời đời kiếp kiếp làm bậc mô phạm giới đức trang nghiêm, hộ trì Chánh Pháp trường tồn và cùng muôn loài viên thành Vô Thượng Giác Ngộ.</p>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật. 🙏</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Đại Thệ Nguyện: Tinh Tế Khéo Léo Giúp Đỡ Huynh Đệ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #030008;
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Universe Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.8;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .nebula {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(15, 12, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            color: #fef08a;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5), 0 0 20px rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #fbbf24;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(254, 240, 138, 0.2);
+            padding-bottom: 20px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .namo {
+            text-align: center;
+            font-weight: 600;
+            color: #fef08a;
+            font-size: 1.15rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .subtitle {
+                font-size: 1.05rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <h1>🌸 Toàn văn Bài Đại Thệ Nguyện: Tinh Tế Quan Sát, Âm Thầm Khéo Léo Giúp Đỡ Huynh Đệ Không Phạm Phải Lỗi Lầm Trong Vô Lượng Kiếp</h1>
+        
+        <div class="subtitle">BÀI ĐẠI THỆ NGUYỆN: TINH TẾ QUAN SÁT, KHÉO LÉO BẢO BỌC GIÚP ĐỠ HUYNH ĐỆ KHÔNG PHẠM LỖI LẦM ĐẾN VÔ LƯỢNG KIẾP</div>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</p>
+        
+        <p>Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:</p>
+
+        <h2>1. Thành tâm sám hối tội lỗi thờ ơ, tự mãn và thói quen chỉ trích, bêu riếu huynh đệ</h2>
+        
+        <p>Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng trước tòa sen Tam Bảo khi soi rọi lại sự vô tâm ích kỷ và bản ngã thô tháo của con từ vô lượng kiếp đến nay:</p>
+        
+        <ul>
+            <li>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này, con đã mang nặng tâm thờ ơ, lạnh lùng, vô trách nhiệm trước sự an nguy và đạo nghiệp của tha nhân:
+                <ul>
+                    <li>Con thấy huynh đệ, bạn bè chung quanh có sơ hở, có nguy cơ vấp ngã hay sắp phạm vào sai lầm mà con làm ngơ, bình chân như vại, ích kỷ nghĩ rằng đó không phải việc của mình;</li>
+                    <li>Con để mặc cho huynh đệ trượt dài vào lỗi lầm, tổn hao phước báu, đánh mất giới đức và thối chuyển bồ đề tâm mà lòng con không biết xót xa che chở.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì tâm kiêu căng, thích làm "thầy đời", làm "ông nội người ta":
+                <ul>
+                    <li>Hễ thấy ai có chút khuyết điểm, lỗi lầm là bản ngã con lập tức hớn hở, lên giọng răn dạy, chỉ trích gay gắt, bới móc lỗi người trước mặt đám đông để phô trương cái tôi đạo đức giả tạo của mình;</li>
+                    <li>Con đã dùng lời lẽ thô lỗ, thiếu tế nhị làm tổn thương lòng tự trọng của huynh đệ, khiến người ta nảy sinh tâm lý chống đối, ấm ức, thù ghét và xa lánh đạo tràng.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì tâm muốn khoe khoang khi giúp đỡ người khác: Mỗi khi hỗ trợ hay nhắc nhở được ai điều gì, tâm con lại lăng xăng kể công, muốn người ta phải mang ơn mình, làm rò rỉ hết phước đức thanh tịnh.</li>
+            <li>Con xin thấm nhuần sâu sắc và rùng mình kinh sợ trước quả báo khốc liệt:
+                <ul>
+                    <li>Thờ ơ trước lỗi lầm của huynh đệ thì đời sau sẽ rơi vào cảnh cô độc, trơ trọi, khi gặp hoạn nạn hay rơi vào tà kiến không một ai đưa tay cứu vớt;</li>
+                    <li>Chỉ trích bêu riếu làm tổn thương huynh đệ thì quả báo đời đời kiếp kiếp bị người đời khinh khi, xua đuổi, bị gieo tiếng xấu và chính bản thân sẽ mắc đúng vào lỗi lầm nhục nhã mà mình từng chê bai người khác!</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Giờ đây tỉnh ngộ trước chân lý từ bi vô ngã của Phật Pháp, con xin đem trọn tính mạng dập đầu mọp sát đất trước Đức Từ Phụ Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ cho đứa con ngu muội dại khờ!</p>
+
+        <h2>2. Lời thề đại nguyện tinh tế quan sát, âm thầm khéo léo nâng đỡ và bảo bọc huynh đệ không phạm lỗi lầm trong vô lượng kiếp</h2>
+
+        <p>Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:</p>
+
+        <ul>
+            <li>Nguyện cho con từ nay cho đến vô lượng kiếp về sau luôn khắc sâu định lý: Ngăn chặn một người không để họ phạm lỗi là công đức vô lượng cứu cả huệ mạng; Giúp đỡ trong âm thầm, tinh tế và tôn trọng là đỉnh cao của tình huynh đệ giải thoát:
+                <ul>
+                    <li>Tuyệt đối xem sự tu tập, sự tiến bộ và giới đức thanh tịnh của từng huynh đệ chung quanh như chính sinh mệnh và đạo nghiệp của bản thân mình;</li>
+                    <li>Quyết tâm xóa bỏ mọi niệm phân biệt, tị hiềm hay thờ ơ lãnh đạm giữa chốn Tăng đoàn.</li>
+                </ul>
+            </li>
+            <li>Con nguyện huân tập ĐÔI MẮT QUAN SÁT TINH TẾ VÀ ĐẦU ÓC NHẠY BÉN:
+                <ul>
+                    <li>Luôn tỉnh giác dõi theo từng cử chỉ, hoàn cảnh, tâm tư và chuyển biến tinh thần của các huynh đệ chung quanh;</li>
+                    <li>Kịp thời nhận biết từ sớm những khó khăn, bế tắc, những cạm bẫy cám dỗ hay những sơ hở trong công việc, sinh hoạt có thể dẫn đến sai lầm hoặc làm tổn hại oai nghi;</li>
+                    <li>Chủ động tìm trăm phương ngàn kế bọc lót từ xa, tháo gỡ chướng duyên, dọn dẹp cạm bẫy từ trong trứng nước để huynh đệ vững bước trên đường thiện mà không hề hay biết mình vừa được chở che.</li>
+                </ul>
+            </li>
+            <li>Con nguyện thực hành NGHỆ THUẬT NÂNG ĐỠ KÍN ĐÁO, KHÉO LÉO VÀ KHIÊM HẠ TUYỆT ĐỐI:
+                <ul>
+                    <li>Tuyệt đối không bao giờ làm "thầy đời", không bắt bẻ đụng đâu nói đó, không chê bai trước mặt đại chúng;</li>
+                    <li>Nếu cần góp ý, con nguyện chỉ tìm cơ hội gặp riêng nơi thanh vắng, nói chuyện bằng giọng điệu từ tốn, ấm áp, nhã nhặn và chan chứa tình yêu thương;</li>
+                    <li>Luôn thành tâm nhìn thấy và khen ngợi những ưu điểm, công đức, hạnh lành của huynh đệ trước, nâng đỡ tinh thần người nghe cho hoan hỷ rồi mới từ tốn, khéo léo trao đổi điều cần hoàn thiện;</li>
+                    <li>Lời nói và cử chỉ luôn toát lên lòng khiêm cung tột cùng: "Em/Tôi cũng vụng về nhiều lỗi, xin huynh đệ cùng cẩn trọng để giữ gìn đạo nghiệp chung", giữ trọn danh dự và sự bình an cho huynh đệ.</li>
+                </ul>
+            </li>
+            <li>Con nguyện GIỮ TÂM ÂM THẦM, VÔ DANH VÀ NHƯỜNG CÔNG CHO THA NHÂN:
+                <ul>
+                    <li>Giúp đỡ huynh đệ vượt qua hiểm nạn, giữ trọn giới luật mà tuyệt đối không để lại dấu vết, không mong cầu sự trả ơn hay xưng tụng;</li>
+                    <li>Việc tốt mình làm sẵn sàng nhường công cho huynh đệ đứng tên, chỉ cần "Trời biết, Phật biết và huynh đệ được an lành" là lòng con đã ngập tràn hạnh phúc;</li>
+                    <li>Lấy tình thương yêu vô bờ bến và sự hy sinh thầm lặng làm chất keo gắn kết tình huynh đệ keo sơn, làm cho Tăng đoàn ngày càng hưng thịnh, thanh tịnh và hòa hợp.</li>
+                </ul>
+            </li>
+            <li>Con nguyện lấy Hạnh Nâng Đỡ Tinh Tế làm bệ phóng cho công phu Thiền Định:
+                <ul>
+                    <li>Nhờ luôn sống vì người, mở rộng dung lượng trái tim bao la và xóa tan bản ngã kiêu hãnh, tâm hồn con trở nên thuần khiết, dịu dàng, an định;</li>
+                    <li>Dễ dàng lắng sâu vào các tầng thiền định vô ngã, khai mở trí tuệ Bát Nhã thuần tịnh soi sáng khắp muôn phương.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cầu xin uy đức Tam Bảo chứng minh và gia hộ</h2>
+
+        <p>Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát, Lịch đại Tổ Sư và Sư Phụ từ bi chứng minh cho tấc lòng sám hối và lời đại thệ nguyện thiết tha sắt son tự đáy lòng con; gia hộ cho con tiêu trừ sạch sẽ hạt giống thờ ơ vô cảm cùng thói quen chỉ trích kiêu căng đã huân tập từ vô lượng kiếp; ban cho con một đôi mắt tinh tường nhạy bén, một trái tim đại bi bao dung và sự khéo léo nhiệm mầu trong từng hành động, để đời đời kiếp kiếp con luôn là chiếc khiên vững chắc âm thầm che chở, là người bạn lành trung kiên nâng đỡ cho tất cả huynh đệ cùng giữ trọn giới đức, không phạm một lỗi lầm nào, trang nghiêm Tăng đoàn và cùng muôn loài viên thành Vô Thượng Giác Ngộ.</p>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật. 🙏</p>
+    </div>
+</body>
+</html>

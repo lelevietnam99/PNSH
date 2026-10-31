@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Đại Thệ Nguyện: Tri Ân Người Chỉ Lỗi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #030008;
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Universe Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.8;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .nebula {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(15, 12, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            color: #fef08a;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5), 0 0 20px rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #fbbf24;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(254, 240, 138, 0.2);
+            padding-bottom: 20px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .namo {
+            text-align: center;
+            font-weight: 600;
+            color: #fef08a;
+            font-size: 1.15rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .subtitle {
+                font-size: 1.05rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <h1>🌸 Toàn văn Bài Đại Thệ Nguyện: Thấm Nhuần Công Ơn Trời Biển Của Người Đã Chỉ Lỗi Cho Mình Trong Vô Lượng Kiếp Và Thề Nguyền Trọn Đời Phục Thiện, Cúi Đầu Tri Ân Trước Tam Bảo</h1>
+        
+        <div class="subtitle">BÀI ĐẠI THỆ NGUYỆN: THẤM NHUẦN CÔNG ƠN CỦA NGƯỜI ĐÃ CHỈ LỖI CHO MÌNH TRONG VÔ LƯỢNG KIẾP</div>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</p>
+        
+        <p>Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:</p>
+
+        <h2>1. Thành tâm sám hối nhận rõ tội lỗi vô ơn, tự ái, oán hận người chỉ lỗi và run sợ trước quả báo khốc liệt</h2>
+        
+        <p>Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng khi soi rọi lại bản ngã kiêu căng, thói tự ái hẹp hòi và lòng bội bạc vô ơn đang bám rễ sâu thẳm trong tâm thức con từ vô lượng kiếp đến nay:</p>
+        
+        <ul>
+            <li>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này, con đã mang nặng tâm kiêu ngạo, ái ngã nặng nề, chỉ thích nghe lời ca tụng tâng bốc: Con mê muội thích được khen ngợi, thích người ta tung hô những ưu điểm giả tạo của mình; tâm con hớn hở sung sướng khi được nịnh nọt mà không hay biết đó là chén thuốc độc bọc đường đang giết chết huệ mạng và đạo đức của con.</li>
+            <li>Con xin sám hối vì tâm tự ái, nổi xung, bực bội và oán hận khi có người chỉ ra lỗi lầm của con:
+                <ul>
+                    <li>Hễ có ai chạm đến khuyết điểm của con, bản ngã con lập tức xù lông nhím, mặt mày nóng bừng, tâm can sôi sục bất an;</li>
+                    <li>Con cãi cọ phân bua, đem lời cay độc xỉa xói ngược lại người góp ý, tìm cách bới lông tìm vết lỗi lầm của họ để hạ bệ danh dự của họ cho bõ cơn tức tối;</li>
+                    <li>Con để bụng thù hằn, xa lánh, cô lập và kết oán với những người đã dám mở lời can ngăn, chỉ dạy cho con.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì tâm vô ơn bạc bẽo trước tình thương và sự hy sinh của các bậc ân nhân:
+                <ul>
+                    <li>Con u mê không nhận ra rằng: ở đời khen nhau lấy lòng thì dễ, còn dám mở miệng chỉ lỗi cho người khác là họ phải hy sinh sự bình yên, chấp nhận rủi ro bị hiểu lầm, bị giận ghét chỉ vì muốn cứu vớt cuộc đời con;</li>
+                    <li>Nhất là đối với Sư Phụ và các bậc ân sư, Người đã hao tâm tổn trí, dùng cả uy đức và lòng từ bi rầy trách, dạy dỗ, uốn nắn từng chút sai lầm cho con, vậy mà con đã từng phụ bạc tấm lòng từ mẫu của Người, ấm ức trong lòng, không chịu cúi đầu phục thiện.</li>
+                </ul>
+            </li>
+            <li>Con xin thấm nhuần sâu sắc và rùng mình kinh sợ trước những quả báo tàn khốc của thói tự ái, oán hận người chỉ lỗi:
+                <ul>
+                    <li>Oán ghét người chỉ lỗi thì cánh cửa tiến bộ tâm linh vĩnh viễn khép chặt; bao nhiêu sai lầm vi tế tích tụ thành núi nghiệp chướng, làm việc thiện biến thành việc ác;</li>
+                    <li>Bị cô lập giữa cuộc đời: bạn bè, thiện tri thức và bậc Minh sư xa lánh, trôi dạt vào chốn tà sư bạn ác vây quanh toàn những lời nịnh hót lừa lọc;</li>
+                    <li>Quả báo đời sau sinh ra làm kẻ đần độn, ngu si, đui mù ngọng câm, tâm hồn tăm tối không có ngọn đèn Chánh Pháp soi rọi;</li>
+                    <li>Đọa lạc vào ba đường ác (địa ngục, ngạ quỷ, súc sinh) chịu khổ hình triền miên vì bản ngã kiêu mạn ngang tàng không ai dạy dỗ được!</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Giờ đây tỉnh ngộ trước chân lý sáng ngời của Phật Pháp, con xin đem trọn tính mạng dập đầu mọp sát đất trước Đức Từ Phụ Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ cho đứa con ngu muội khờ khạo!</p>
+
+        <h2>2. Lời thề đại nguyện thấm nhuần ân đức sâu dày của người chỉ lỗi, trọn đời cúi đầu tri ân và phục thiện trong vô lượng kiếp về sau</h2>
+
+        <p>Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:</p>
+
+        <ul>
+            <li>Nguyện cho con từ nay cho đến vô lượng kiếp về sau luôn khắc sâu định lý: Người khen ngợi ta chưa chắc là bạn tốt, nhưng người chỉ đúng lỗi cho ta chính là Ân Sư chỉ chỗ chôn vàng mười, là Bồ Tát hiện thân cứu vớt huệ mạng của đời con:
+                <ul>
+                    <li>Tuyệt đối xem người chỉ lỗi là ân nhân tối thượng;</li>
+                    <li>Khắc ghi trong đáy lòng: một lời chỉ lỗi chân thành quý giá hơn ngàn cân châu báu, là nấc thang kim cương đưa con bước qua biển khổ sinh tử luân hồi.</li>
+                </ul>
+            </li>
+            <li>Con nguyện huân tập TÂM THẾ LUÔN ĐÓN CHỜ SỰ CHỈ DẠY VÀ BIẾT PHỤC THIỆN TUYỆT ĐỐI:
+                <ul>
+                    <li>Luôn giữ tâm khiêm hạ sâu thẳm, ý thức rõ mình là phàm phu đầy dẫy lỗi lầm thô và tế, không thể tự thấy hết nếu không nhờ mắt sáng của tha nhân;</li>
+                    <li>Trong từng phút giây, con nguyện mở rộng cõi lòng đón chờ sự răn dạy, chỉ bảo của Sư Phụ, của chư Tăng Ni, của các bậc trưởng thượng, của huynh đệ và của muôn loài xung quanh;</li>
+                    <li>Dù người chỉ lỗi răn dạy bằng lời lẽ từ tốn yêu thương hay bằng thái độ gay gắt, mắng chửi thô bạo trước mặt đại chúng, tâm con nguyện không một mảy may tự ái, không một niệm oán giận, lập tức cúi đầu sát đất chắp tay cung kính thốt lời tri ân sâu sắc: "Con xin thành tâm tri ân và đội ơn người đã chỉ lỗi cho con, con xin chân thành nhận lỗi và quyết chí sửa đổi ngay lập tức";</li>
+                    <li>Tuyệt đối dập tắt ngay từ trong trứng nước mọi mầm mống cãi cọ, biện minh, thanh minh hay xỉa xói lỗi người để trả đũa.</li>
+                </ul>
+            </li>
+            <li>Con nguyện dốc trọn lòng tôn kính và vâng lời BẬC MINH SƯ RẦY TRÁCH CHỈ LỖI:
+                <ul>
+                    <li>Khắc ghi sâu sắc lời Sư Phụ dạy: Thầy khen ngợi thì dễ làm mình sa đọa, Thầy quở phạt, răn đe, kỷ luật mới chính là bậc Cha Mẹ tâm linh đang nhổ sạch cỏ dại độc hại trong tâm hồn con;</li>
+                    <li>Dù bị Sư Phụ hay huynh trưởng quở trách, kỷ luật nặng nề đến đâu, con nguyện lấy đó làm niềm hạnh phúc lớn lao, dập đầu đảnh lễ tạ ơn Người đã không bỏ rơi con, xem đó là ngọn lửa thiêng trui rèn bản ngã thành tro bụi;</li>
+                    <li>Quyết tâm nhìn sâu vào từng lời dạy bảo để tìm cho ra lỗi lầm sâu kín nơi tâm ý mà sám hối và dứt trừ tận gốc rễ.</li>
+                </ul>
+            </li>
+            <li>Con nguyện lấy Lòng Biết Ơn Người Chỉ Lỗi làm bệ phóng cho công phu Thiền Định:
+                <ul>
+                    <li>Nhờ biết ơn người chỉ lỗi mà tảng đá bản ngã tự ái kiêu căng bị đập tan tành;</li>
+                    <li>Tâm hồn trở nên mềm mại, thanh tịnh, nhu hòa tuyệt đối, dễ dàng an trú vào Chánh niệm, lắng sâu vào Chánh định và bừng sáng tuệ giác vô ngã của mười phương Chư Phật.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cầu xin uy đức Tam Bảo chứng minh và gia hộ</h2>
+
+        <p>Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát và Sư Phụ từ bi chứng minh cho tấc lòng sám hối và lời đại thệ nguyện thiết tha sắt son tự đáy lòng con; gia hộ cho con đập tan tận gốc rễ thói tự ái hẹp hòi, tập khí kiêu mạn, sân hận trước lời chê bai đã huân tập từ vô lượng kiếp; ban cho con một trái tim khiêm cung cùng tột như bụi đất, dũng khí phục thiện phi thường và tấm lòng tri ân sâu sắc với mọi người chỉ lỗi cho con, để đời đời kiếp kiếp con luôn được bậc Minh sư sáng mắt răn dạy, được bạn lành đồng tu chỉ lối, thân tâm ngày càng thanh tịnh, đạo nghiệp viên dung và cùng muôn loài viên thành Vô Thượng Giác Ngộ.</p>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật. 🙏</p>
+    </div>
+</body>
+</html>

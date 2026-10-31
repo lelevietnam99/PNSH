@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Đại Thệ Nguyện: Bảo Toàn Giới Đức & Trân Quý Màu Áo Tu Sĩ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #030008;
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Universe Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.8;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .nebula {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(15, 12, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            color: #fef08a;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5), 0 0 20px rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #fbbf24;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(254, 240, 138, 0.2);
+            padding-bottom: 20px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .namo {
+            text-align: center;
+            font-weight: 600;
+            color: #fef08a;
+            font-size: 1.15rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .subtitle {
+                font-size: 1.05rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <h1>🌸 Toàn văn Bài Đại Thệ Nguyện: Thấm Nhuần Làm Phước Bù Ác Nghiệp, Xin Trả Nghiệp Đúng Ý Phật, Ngăn Chặn Lỗi Từ Ý Niệm Bảo Toàn Giới Đức Oai Nghi Và Trân Quý Màu Áo Tu Sĩ Đến Vô Lượng Kiếp Về Sau</h1>
+        
+        <div class="subtitle">BÀI ĐẠI THỆ NGUYỆN: LÀM PHƯỚC CHUYỂN NGHIỆP, TRẢ NGHIỆP ĐÚNG Ý PHẬT, BẢO TOÀN OAI NGHI GIỚI ĐỨC VÀ TRÂN QUÝ MÀU ÁO TU SĨ ĐẾN VÔ LƯỢNG KIẾP</div>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</p>
+        
+        <p>Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:</p>
+
+        <h2>1. Thành tâm sám hối tội chướng sâu dày, sự buông lỏng tâm ý và run sợ trước đại tội làm tổn hại màu áo tu sĩ</h2>
+        
+        <p>Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng trước tòa sen Tam Bảo khi soi rọi lại biển ác nghiệp trong vô lượng kiếp luân hồi cùng những sơ thất nơi thân tâm của con:</p>
+        
+        <ul>
+            <li>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này khi chưa hiểu sâu Chánh pháp, con đã gieo rắc vô lượng ác nghiệp tội lỗi: Con đã làm tổn thương chúng sinh, tham lam, sân hận, kiêu ngạo, ích kỷ, gây bao oan trái nợ nần khiến cho kho tàng nghiệp chướng chất chồng như núi;</li>
+            <li>Con xin sám hối vì tâm buông lung, lơ là không canh giữ ý niệm: Con đã để cho ý căn chạy theo trần cảnh, để cho những hạt giống tham dục, tị hiềm, giận dữ, tự mãn âm thầm bén rễ trong dòng suy nghĩ; đã có những lúc con dung dưỡng niệm ác le lói mà không chịu dập tắt ngay, suýt để nó tràn ra ngoài làm hoen ố phẩm hạnh;</li>
+            <li>Con xin sám hối vì chưa giữ trọn vẹn oai nghi tế hạnh và giới đức thanh tịnh: Con đã có những cử chỉ, lời nói hay hành động thiếu sự cẩn trọng, thiếu vẻ trang nghiêm khiêm cung, làm giảm sút nét đẹp giải thoát và ảnh hưởng đến niềm tin của đại chúng đối với Tăng đoàn;</li>
+            <li>Con xin dập đầu bạt mạng sám hối vì chưa xứng đáng với màu áo người tu sĩ:
+                <ul>
+                    <li>Con run sợ khi nhớ lời Sư Phụ dạy: Chiếc áo tu sĩ là Y Công Đức, là lời thề thiêng liêng tuyên bố với trời đất về sự thánh thiện vô ngã;</li>
+                    <li>Đã có những lúc đạo đức, tâm từ bi và sự hy sinh bên trong của con chưa theo kịp sự trang nghiêm của chiếc áo con mang; con hưởng dụng sự cung kính, đảnh lễ và vật phẩm cúng dường bằng mồ hôi nước mắt của đàn na tín thí mà đức hạnh còn mỏng manh, tội lỗi còn đầy dẫy;</li>
+                </ul>
+            </li>
+            <li>Con xin thấm nhuần sâu sắc và rùng mình kinh sợ trước quả báo khốc liệt: Nếu đạo đức thua chiếc áo mình mặc thì phước đức cạn kiệt, kiếp sau phải đọa làm thân trâu, ngựa, chó để kéo cày, giữ cửa đền trả nợ tín thí, hoặc rơi thẳng vào địa ngục A-tỳ chịu cực hình muôn kiếp không ngày giải thoát!</li>
+        </ul>
+
+        <p>Giờ đây tỉnh ngộ trước sự thật nghiêm minh của luật Nhân Quả, con xin đem trọn tính mạng dập đầu mọp sát đất trước Đức Từ Phụ Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ cho đứa con tội lỗi!</p>
+
+        <h2>2. Lời thề đại nguyện làm phước chuyển nghiệp, xin trả nghiệp đúng ý Phật, ngăn lỗi từ ý niệm và trọn đời tôn kính màu áo tu sĩ</h2>
+
+        <p>Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:</p>
+
+        <ul>
+            <li>Con nguyện DỐC TRỌN THÂN MẠNG LÀM VÔ LƯỢNG CÔNG ĐỨC ĐỂ BÙ ĐẮP ÁC NGHIỆP QUÁ KHỨ:
+                <ul>
+                    <li>Khắc sâu định lý: Còn một hơi thở là còn phải dốc lòng làm phước; không bao giờ than van mệt mỏi, không bao giờ tự mãn thấy mình làm phước đã đủ;</li>
+                    <li>Nguyện sống một đời hy sinh, tận tụy công quả, phục vụ đại chúng, bảo vệ chốn già lam Tam Bảo, đem Chánh pháp và tình thương cứu khổ muôn loài để tạo đại phước đức hóa giải muôn vàn nợ nghiệp xưa.</li>
+                </ul>
+            </li>
+            <li>Con tha thiết XIN CHƯ PHẬT GIA HỘ CHO CON ĐƯỢC TRẢ NGHIỆP ĐÚNG Ý PHẬT NHẤT:
+                <ul>
+                    <li>Cúi xin Chư Phật và Sư Phụ điều phối cho nghiệp cũ của con được chuyển hóa nhẹ nhàng, cho con được trả góp nợ nghiệp qua những giờ phút tọa thiền khắc nghiệt đau đớn nơi thân xác, và qua những nhọc nhằn tận tụy làm việc phụng sự chúng sinh;</li>
+                    <li>Khi nghịch cảnh, bệnh tật, sự bất công, vu oan hay lời mắng chửi sỉ nhục của thế gian ập đến, cúi xin Phật gia hộ cho con tuyệt đối không trốn nghiệp, không khởi tâm oán hận hay phân bua cãi cọ;</li>
+                    <li>Nguyện cho con giữ vững nụ cười thanh thản, hai tay chắp lại cung kính, hoan hỷ cúi đầu đón nhận sự trừng phạt của nhân quả: xem đó là ân huệ để trả sạch nợ xưa, dùng sự nhẫn nhục để tôi luyện đạo tâm và biến từng nỗi đau thành hoa sen thanh tịnh.</li>
+                </ul>
+            </li>
+            <li>Con nguyện PHÁT HIỆN LỖI NGAY TỪ TRONG Ý NIỆM VÀ QUYẾT BẢO TOÀN OAI NGHI GIỚI ĐỨC:
+                <ul>
+                    <li>Nguyện thắp sáng ngọn đèn Chánh niệm trên từng hơi thở, quán chiếu từng vi tế khởi tâm động niệm suốt 24 giờ trong ngày;</li>
+                    <li>Hễ thấy một mảy may niệm tham dục, sân hận, kiêu mạn, lười biếng hay tự hào le lói vừa xuất hiện nơi vỏ não, con nguyện lập tức bóp nghẹt, dập tắt ngay từ trong trứng nước bằng câu niệm Phật, bằng sự xấu hổ tột cùng và hơi thở tụ khí Đan Điền;</li>
+                    <li>Tuyệt đối quyết tử không bao giờ để niệm bất thiện tràn ra thành ánh mắt, sắc diện, lời nói hay hành động cử chỉ;</li>
+                    <li>Trọn đời gìn giữ từng giới luật tinh nghiêm, giữ gìn từng bước đi, thế đứng, dáng ngồi, cung cách giao tiếp trang nghiêm thanh thoát, xứng đáng là biểu tượng mô phạm, hộ trì niềm tin thanh tịnh cho thế gian.</li>
+                </ul>
+            </li>
+            <li>Con nguyện TRỌN ĐỜI TRÂN QUÝ MÀU ÁO NGƯỜI TU SĨ VÀ NỖ LỰC TU TẬP ĐỂ ĐẠO ĐỨC VƯỢT TRỘI HƠN CHIẾC ÁO MÌNH MANG:
+                <ul>
+                    <li>Mỗi khi đắp chiếc y cà-sa, khoác lên mình màu áo hoại sắc thiêng liêng, con nguyện quỳ dập đầu tạ ơn mười phương Chư Phật và đàn na tín thí;</li>
+                    <li>Tuyệt đối không bao giờ để khởi tâm kiêu căng, xem thường người cư sĩ hay tự mãn về địa vị người tu;</li>
+                    <li>Luôn giữ tâm khiêm hạ tột cùng như cát bụi, tự nhắc nhở bản thân từng phút giây: Phải tu dưỡng làm sao để đạo hạnh, đức hy sinh, lòng từ bi và định lực bên trong phải sâu thẳm, cao vời hơn cả chiếc áo mình đang mặc, thà chịu trăm ngàn đau đớn chứ quyết không làm tổn hại uy danh của Tăng đoàn và màu cờ giải thoát của Đức Từ Phụ Thích Ca Mâu Ni Phật.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cầu xin uy đức Tam Bảo chứng minh và gia hộ</h2>
+
+        <p>Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát, Lịch đại Tổ Sư và Sư Phụ từ bi phóng ánh quang minh chứng minh cho tấc lòng sám hối và lời đại thệ nguyện thiết tha sắt son tự đáy lòng con; gia hộ cho con tiêu trừ sạch sẽ hạt giống buông lung, tập khí mê muội từ vô lượng kiếp; ban cho con định lực kim cương để soi thấu từng ý niệm, ban cho con sức mạnh của hạnh nhẫn nhục kiên cường để trả sạch nợ nghiệp trong an vui, và gội nhuần tâm can con bằng dòng sữa Pháp thanh tịnh, để đời đời kiếp kiếp con luôn là bậc chân tu giới đức tinh nghiêm, làm rạng rỡ màu áo giải thoát của Phật gia, trở thành chỗ nương tựa vững chắc cho muôn loài và cùng tất cả chúng sinh viên thành Vô Thượng Giác Ngộ.</p>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật. 🙏</p>
+    </div>
+</body>
+</html>
