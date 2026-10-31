@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Văn Phát Nguyện Sám Hối & Bảo Quản Tài Sản</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #030008;
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Universe Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.8;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .nebula {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(15, 12, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            color: #fef08a;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5), 0 0 20px rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(254, 240, 138, 0.2);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .note {
+            font-style: italic;
+            color: #fef3c7;
+            background: rgba(254, 243, 199, 0.05);
+            border-left: 3px solid #fbbf24;
+            padding: 14px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.7;
+        }
+
+        .namo {
+            text-align: center;
+            font-weight: 600;
+            color: #fef08a;
+            font-size: 1.15rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <h1>🌸 Bài văn phát nguyện thấm nhuần quả báo của tâm không bảo quản tài sản kĩ lưỡng đến vô lượng kiếp về sau và thề nguyền trọn đời cẩn trọng, nâng niu bảo vệ của chung, của riêng trước Tam Bảo</h1>
+        
+        <div class="note">
+            Mỗi khi tọa thiền, đảnh lễ Tam Bảo, hoặc khi sử dụng, bảo quản bất kỳ vật dụng nào trong gia đình, cơ quan, đạo tràng hay chốn tự viện, Pháp Thanh hãy quỳ dập đầu sát đất và dâng lên lời đại thệ nguyện thiêng liêng này nhé:
+        </div>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</p>
+
+        <p>Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:</p>
+
+        <h2>1. Thành tâm ăn năn nhận rõ tội lỗi không bảo quản tài sản kĩ lưỡng, thói cẩu thả bừa bãi và run sợ trước quả báo khốc liệt:</h2>
+
+        <p>Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng khi soi rọi lại thói quen cẩu thả, vô trách nhiệm, thói xài hao và tâm lý xem thường đồ đạc, tài sản đang bám rễ sâu dày trong tâm thức con từ vô lượng kiếp đến nay:</p>
+
+        <ul>
+            <li>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này, con đã mang nặng tâm cẩu thả, bừa bãi, không biết trân quý và bảo quản tài sản:
+                <ul>
+                    <li>Đồ đạc dùng xong con vứt ngổn ngang, bạ đâu quăng đó; không chịu lau chùi, che đậy, bảo dưỡng định kỳ, để cho mưa nắng, bụi bặm, ẩm mốc hủy hoại làm đồ mau hư cũ, rỉ sét, đổ vỡ;</li>
+                    <li>Con dùng đồ thô bạo, quăng quật, đóng mở mạnh tay, đối xử tệ bạc với các vật dụng phục vụ đời sống của mình;</li>
+                    <li>Con để nhà cửa, phòng ốc bề bộn như đống rác mà tâm không thấy xấu hổ, biến không gian sống thành sự nhếch nhác, làm tiêu tan sinh khí và đạo đức của bản thân và gia đình.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì tâm lý vô trách nhiệm, xem thường của công, của tập thể và của Tam Bảo:
+                <ul>
+                    <li>Hễ là đồ không phải của riêng con bỏ tiền túi ra mua, là con lập tức khởi tâm lơ là, bất cần, dùng xả láng không biết xót xa;</li>
+                    <li>Con đã từng làm thất thoát, hư hỏng, lãng phí tài sản của công ty, cơ quan, trường học, đường sá, công viên;</li>
+                    <li>Kinh hoàng nhất là đối với tài sản của Tam Bảo, nơi kết tinh từng giọt mồ hôi, hạt gạo, đồng tiền của đàn na tín thí gửi gắm, con đã có lúc dùng thiếu cẩn trọng, không bảo quản kỹ lưỡng, để đồ dùng chùa chiền bị ẩm mốc, mối mọt, thất lạc, hư hoại vô ích, phạm vào đại tội tổn hại của Tam Bảo mà không hề hay biết.</li>
+                </ul>
+            </li>
+            <li>Con xin sám hối vì tội lỗi bội bạc với mồ hôi nước mắt của tha nhân và tài nguyên của trời đất: Con vô tâm không thấy rằng mỗi giọt nước, mỗi số điện, mỗi hạt cơm, mỗi đồ dùng đều phải đánh đổi bằng sức lao động gian khổ của biết bao người và tài nguyên quý giá của Trái Đất; con đã lãng phí, phá của, gieo rắc sự cạn kiệt cho môi trường sống.</li>
+            <li>Con xin thấm nhuần sâu sắc và rùng mình kinh sợ trước những quả báo tàn khốc của tâm không bảo quản tài sản kĩ lưỡng:
+                <ul>
+                    <li>Không biết giữ gìn đồ đạc thì quả báo cơ nghiệp sụp đổ, làm ăn lụn bại, đời đời kiếp kiếp rơi vào cảnh nghèo hèn, túng thiếu, tìm một manh áo ấm, một cái chén lành lặn cũng không có;</li>
+                    <li>Cẩu thả làm hư hại của công thì đời sau sống trong cảnh bơ vơ, mất nhà mất cửa, không nơi nương tựa;</li>
+                    <li>Làm thất thoát, hao tổn cơ sở vật chất của Tam Bảo thì tổn phước tột cùng, đọa lạc vào các tầng địa ngục chịu cực hình rên xiết, hoặc tái sinh làm trâu ngựa, chó mèo trong chùa để kéo cày trả nợ nghiệp muôn đời;</li>
+                    <li>Biến tâm hồn thành đống rác u tối, đầu óc kém cỏi không đủ trí tuệ để làm nên việc lớn, bị người đời chê cười, khinh khi và xa lánh!</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Giờ đây tỉnh ngộ trước sự nghiêm minh của luật Nhân Quả, con xin đem trọn thân mạng dập đầu mọp sát đất trước Đức Từ Phụ Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ cho đứa con vô minh dại dột!</p>
+
+        <h2>2. Lời thề đại nguyện thấm nhuần quả báo, trọn đời cẩn trọng bảo quản tài sản, nâng niu của công và giữ gìn tài nguyên trong vô lượng kiếp về sau:</h2>
+
+        <p>Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:</p>
+
+        <ul>
+            <li>Nguyện cho con từ nay cho đến vô lượng kiếp về sau luôn khắc sâu định lý: Cẩu thả bừa bãi làm hư hao tài sản là cội nguồn của nghèo hèn, lụn bại và đọa lạc; Tinh tế, cẩn trọng, hết lòng bảo quản tài sản của chung và của riêng là cội nguồn của phước đức, giàu sang và trí tuệ quang minh:
+                <ul>
+                    <li>Quyết tâm quét sạch thói quen tùy tiện, bừa bãi, vô trách nhiệm trong từng hành động nhỏ nhặt;</li>
+                    <li>Tuyệt đối xem việc giữ gìn đồ đạc, bảo vệ tài nguyên là một nghĩa vụ đạo đức thiêng liêng đối với cuộc đời.</li>
+                </ul>
+            </li>
+            <li>Con nguyện thực hành lối sống TINH TẾ, NGĂN NẮP VÀ BẢO QUẢN KỸ LƯỠNG trong từng phút giây:
+                <ul>
+                    <li>Đối với tài sản cá nhân và gia đình: Nguyện dùng đồ một cách nâng niu, nhẹ nhàng; cất giữ đúng nơi đúng chỗ; thường xuyên lau chùi, vệ sinh, che chắn mưa nắng và bảo dưỡng máy móc, đồ dùng định kỳ để kéo dài tuổi thọ tối đa cho từng vật dụng;</li>
+                    <li>Luôn giữ gìn nơi ở, bàn làm việc, góc tu tập sạch sẽ, gọn gàng, trang nghiêm; tuyệt đối không để rác rưởi bừa bãi làm vẩn đục tâm hồn;</li>
+                    <li>Tiết kiệm từng giọt nước, từng chút điện, từng mảnh giấy, hạt cơm; hễ đồ dùng còn sửa được thì quyết tâm sửa chữa để dùng tiếp, không tùy tiện vứt bỏ lãng phí.</li>
+                </ul>
+            </li>
+            <li>Con nguyện dốc trọn lòng trung kiên BẢO VỆ VÀ BẢO QUẢN CỦA CÔNG CÙNG CƠ SỞ VẬT CHẤT TAM BẢO:
+                <ul>
+                    <li>Đứng trước tài sản của tập thể, của quốc gia hay của chốn già lam Tam Bảo, con nguyện nâng niu, giữ gìn gấp mười, gấp trăm lần tài sản của riêng mình;</li>
+                    <li>Thấy bóng đèn chưa tắt, vòi nước rỉ, cánh cửa bị gió dập, con nguyện lập tức đến tắt, khóa và gài lại cẩn thận;</li>
+                    <li>Thấy đồ đạc của chùa, của công cộng để chênh vênh nơi ẩm thấp hay ngoài trời mưa nắng, con nguyện chủ động dời vào nơi an toàn, khô ráo, che đậy kỹ lưỡng;</li>
+                    <li>Tuyệt đối không cho phép bản thân hay bất kỳ ai lạm dụng, làm hư hỏng, thất thoát dù chỉ một cây kim, ngọn cỏ của Tam Bảo và của chung.</li>
+                </ul>
+            </li>
+            <li>Con nguyện lấy Tâm Tinh Tế, Trách Nhiệm làm bệ phóng cho công phu thiền định:
+                <ul>
+                    <li>Từ sự cẩn trọng, tỉnh giác trong từng cử chỉ cầm nắm, đặt để đồ vật bên ngoài, con huân tập sự tỉnh giác sâu sắc vào bên trong tâm thức;</li>
+                    <li>Giữ cho ngôi nhà tâm hồn luôn sạch bóng bụi trần vô minh, rỗng rang thanh tịnh để định lực kiên cố, dễ dàng nhập sâu vào các tầng thiền định giải thoát.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cầu xin uy đức Tam Bảo chứng minh và gia hộ:</h2>
+
+        <p>Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát và Sư Phụ từ bi chứng minh cho tấc lòng sám hối và lời đại thệ nguyện thiết tha sắt son tự đáy lòng con; gia hộ cho con tiêu trừ sạch sẽ tập khí cẩu thả, vô trách nhiệm, xài hao bừa bãi đã huân tập từ vô lượng kiếp; ban cho con đôi bàn tay khéo léo, đôi mắt tinh tế chu đáo và trái tim tràn đầy tình yêu thương, trách nhiệm đối với từng vật dụng, từng tấc đất, giọt nước của cuộc đời, để đời đời kiếp kiếp con luôn là người con Phật mẫu mực, bảo hộ phước đức, làm hưng thịnh Tam Bảo và cùng muôn loài viên thành Vô Thượng Giác Ngộ.</p>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật. 🙏</p>
+    </div>
+</body>
+</html>

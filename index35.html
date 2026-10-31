@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Văn Phát Nguyện Sám Hối Nghiệp Tham Dục & Giữ Trọn Tịnh Hạnh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #030008;
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Universe Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.8;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .nebula {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(15, 12, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            color: #fef08a;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5), 0 0 20px rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(254, 240, 138, 0.2);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .note {
+            font-style: italic;
+            color: #fef3c7;
+            background: rgba(254, 243, 199, 0.05);
+            border-left: 3px solid #fbbf24;
+            padding: 14px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.7;
+        }
+
+        .namo {
+            text-align: center;
+            font-weight: 600;
+            color: #fef08a;
+            font-size: 1.15rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <h1>🌸 Bài văn phát nguyện thấm nhuần quả báo của tâm tham dục, sự nguy hại của việc không quyết tâm diệt dục đến vô lượng kiếp về sau và thề nguyền giữ trọn tịnh hạnh trước Tam Bảo</h1>
+        
+        <div class="note">
+            Mỗi khi tọa thiền, đảnh lễ Tam Bảo, hoặc bất cứ khi nào thấy trong tâm khởi lên một niệm xao xuyến, tơ tưởng dục vọng, Pháp Thanh hãy quỳ dập đầu sát đất và dâng lên lời đại thệ nguyện thiêng liêng này nhé:
+        </div>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</p>
+        
+        <p>Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:</p>
+
+        <h2>1. Thành tâm ăn năn nhận rõ tội lỗi tham dục, sự nhu nhược không quyết tâm diệt dục và run sợ trước quả báo khốc liệt:</h2>
+        
+        <p>Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng khi soi rọi vào con thú tham dục, ngọn lửa dâm ô bỉ ổi đang ngấm ngầm chi phối tâm can con từ vô lượng kiếp đến nay:</p>
+        
+        <ul>
+            <li>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này, con đã chìm đắm trong tâm tham dục, say mê khoái lạc trần gian hèn mọn: Con ngây thơ xem sắc dục là niềm vui, là hạnh phúc mà không nhận ra đó là thuốc độc bọc đường, là chiếc lưới tử thần của ma vương; con để cho mắt nhìn sắc đắm đuối, tai nghe tiếng gợi dục, tâm trí tơ tưởng những hình bóng dâm uế; con đã từng tiếp tay, gieo rắc, ca ngợi, cổ súy hay mai mối kích dục tha nhân, tạo nên vô lượng ác nghiệp nhơ nhớp.</li>
+            <li>Con xin sám hối vì sự nhu nhược, nửa vời, không có ý chí sắt đá quyết tâm diệt dục: Đã bao lần con phát lời tu học, nhưng trong thâm tâm con vẫn ngấm ngầm nuông chiều bản năng, tiếc rẻ những cảm giác khoái lạc; con dễ dãi thỏa hiệp với những suy nghĩ bậy bạ, để cho dục tính âm thầm gặm nhấm huệ mạng; con thiếu một lời thề nguyền sống chết để đoạn tuyệt dục vọng, khiến đạo tâm ngày càng suy sụp, tư cách hèn hạ và công phu thiền định hoàn toàn bế tắc.</li>
+            <li>Con xin sám hối vì tâm kiêu mạn tự cao đã kích động ngọn lửa dâm ô trỗi dậy: Mỗi khi thấy mình giỏi hơn người, tu tốt hơn người, con lại để tâm tự đắc khởi lên, chiêu cảm ác nghiệp dâm dục ầm ầm kéo tới bủa vây thân tâm, làm hoen ố sự tôn nghiêm của người học Phật.</li>
+            <li>Con xin thấm nhuần sâu sắc và rùng mình kinh sợ trước những quả báo tàn khốc của tâm tham dục và sự buông thả dục vọng:
+                <ul>
+                    <li>Thỏa mãn dục vọng là tắm mình trong tội lỗi, làm phước báu cạn kiệt, tâm hồn triền miên bất an, hoảng loạn, không một ngày có được giấc ngủ an lành;</li>
+                    <li>Kẻ tham dục nhiều thuộc về đẳng cấp thấp hèn nhất trong loài người; từ đa dục sẽ trượt dài sang loạn dục, làm những điều trái với luân thường đạo lý, bị pháp luật trừng trị, xã hội khinh bỉ, ô danh muôn thuở;</li>
+                    <li>Nuông chiều bản năng súc sinh thì quả báo tất yếu là đánh mất thân người, đời đời kiếp kiếp đọa lạc làm thân súc sinh hèn mọn, dâm đãng;</li>
+                    <li>Tội lỗi dâm ô chiêu cảm nghiệp chướng khốc liệt, rơi thẳng xuống các tầng địa ngục than hồng, ôm cột đồng rực lửa chịu cực hình xé thịt rách da muôn ngàn kiếp không có ngày ra!</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Giờ đây tỉnh ngộ trước chân lý nghiêm minh của nhân quả, con xin đem trọn thân mạng dập đầu mọp sát đất trước Đức Từ Phụ Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ cho đứa con tội lỗi!</p>
+
+        <h2>2. Lời thề đại nguyện thấm nhuần quả báo, hạ quyết tâm sắt đá diệt dục và trọn đời giữ gìn tịnh hạnh trong vô lượng kiếp về sau:</h2>
+
+        <p>Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:</p>
+
+        <ul>
+            <li>Nguyện cho con từ nay cho đến vô lượng kiếp về sau luôn khắc sâu định lý: Tham dục là thuốc độc, là gai nhọn, là ô uế, là cội nguồn của luân hồi sinh tử; Ly dục và Thanh tịnh tuyệt đối là ngọc báu vô giá đưa đến giác ngộ giải thoát:
+                <ul>
+                    <li>Tuyệt đối xem dục vọng là kẻ thù sinh tử không đội trời chung;</li>
+                    <li>Khắc sâu trong tâm trí: nuông chiều một chút dục vọng là tự mở toang cánh cửa dẫn xuống địa ngục và chuồng súc sinh!</li>
+                </ul>
+            </li>
+            <li>Con nguyện phát khởi một Ý CHÍ SẮT ĐÁ, QUYẾT TÂM DIỆT DỤC KIÊN CƯỜNG VÔ BỜ BẾN:
+                <ul>
+                    <li>Dù phải chịu trăm ngàn đau đớn nơi thân xác, dù phải chiến đấu dằn xé với bản năng từng giây từng phút, con nguyện thà chết vinh quang trong thanh tịnh chứ quyết không sống nhục nhã trong bùn lầy dâm dục;</li>
+                    <li>Hễ một tia niệm dâm dục vừa le lói khởi lên trong tâm, con nguyện lập tức bóp nghẹt, dập tắt ngay từ trong trứng nước bằng câu niệm Phật, bằng sự xấu hổ và quán chiếu thân bất tịnh;</li>
+                    <li>Tuyệt đối không bao giờ nuông chiều, không dễ dãi, không tìm cớ biện hộ cho bất kỳ một sự thỏa hiệp nào với bản năng ô uế.</li>
+                </ul>
+            </li>
+            <li>Con nguyện thực hành trọn vẹn phương pháp chuyển hóa toàn diện của Sư Phụ:
+                <ul>
+                    <li>Tạo đại phước đức: Mỗi ngày siêng năng quỳ lạy Phật sám hối nghiệp dâm dục trong tiền kiếp; tận tụy làm công quả phục vụ đại chúng; nguyện đem hết lòng kính ngưỡng tán thán sự thanh cao của chư Thánh;</li>
+                    <li>Diệt trừ kiêu mạn: Nguyện đời đời giữ tâm khiêm hạ tột cùng như cát bụi, tôn trọng mọi người, thấy mình là kẻ kém cỏi nhất để ngăn chặn ngọn lửa dục không có cơ hội bùng phát;</li>
+                    <li>Luyện tập khí công: Kiên trì thực hành Khí công nguyên pháp (thụt dầu) mỗi ngày, giữ lưng thẳng tắp, ép chặt nội khí liễm tụ vững chắc tại Đan Điền, củng cố đôi chân, khóa chặt hạ bộ để dập tắt dục tính từ tầng gốc rễ năng lượng;</li>
+                    <li>Tiến sâu vào Thiền định: Tinh tấn nhiếp tâm trên từng hơi thở, buông xả mọi duyên trần, an trú vào Chánh niệm và quyết chí hướng đến Chánh định sâu xa để bứng bật vĩnh viễn kiết sử tham ái ra khỏi tạng thức.</li>
+                </ul>
+            </li>
+            <li>Con nguyện trở thành sứ giả bảo vệ Chánh Pháp và sự thanh tịnh cho thế gian:
+                <ul>
+                    <li>Cẩn trọng giữ gìn sáu căn; tuyệt đối không xem, không nghe, không nói, không lan truyền những điều gợi dục, ô uế;</li>
+                    <li>Nguyện dùng cả cuộc đời để khuyên răn, nâng đỡ, khuyến khích mọi người từ bỏ ái dục, quay về với đời sống tịnh hạnh, cùng nhau xây dựng một xã hội thuần phong mỹ tục và hướng thượng tâm linh.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cầu xin uy đức Tam Bảo chứng minh và gia hộ:</h2>
+
+        <p>Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát và Sư Phụ từ bi chứng minh cho tấc lòng sám hối và lời đại thệ nguyện thiết tha sắt son tự đáy lòng con; gia hộ cho con tiêu trừ sạch sẽ hạt giống dâm dục, tà dâm, mê muội đã huân tập từ vô lượng kiếp; ban cho con một ý chí kim cương bất hoại, trí tuệ soi thấu bản chất ô trược của dục lạc, và dòng nước Cam Lộ thanh lương gột rửa sạch tạng thức, để đời đời kiếp kiếp con luôn là bậc chân nhân tịnh hạnh, thân tâm thanh tịnh như hoa sen nở giữa đầm lầy, vững bước trên con đường Vô Thượng Bồ Đề và dẫn dắt muôn loài cùng thoát ly sinh tử khổ đau.</p>
+
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật. 🙏</p>
+    </div>
+</body>
+</html>

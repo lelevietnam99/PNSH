@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Văn Phát Nguyện Sám Hối & Buông Xả Bản Ngã</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #030008;
+            color: #e0e6ed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Universe Background Effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #a855f7, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 190px, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 80px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.8;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .nebula {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        /* Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(15, 12, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        h1 {
+            color: #fef08a;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5), 0 0 20px rgba(217, 119, 6, 0.3);
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(254, 240, 138, 0.2);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: justify;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .namo {
+            text-align: center;
+            font-weight: 600;
+            color: #fef08a;
+            font-size: 1.15rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.4);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <h1>🌸 Bài văn phát nguyện thấm nhuần quả báo của tâm cố chấp, cố phạm đến vô lượng kiếp về sau và thề nguyền buông xả bản ngã, vâng lời dạy Chánh Pháp trước Tam Bảo</h1>
+        
+        <p class="namo">Nam Mô Bổn Sư Thích Ca Mâu Ni Phật.</p>
+        
+        <p>Kính lạy Mười Phương Tam Bảo, Chư Đại Bồ Tát, Lịch đại Tổ Sư, cùng Sư Phụ từ bi chứng minh cho tấc lòng con:</p>
+
+        <h2>1. Thành tâm ăn năn nhận rõ tội lỗi cố chấp, cố phạm và run sợ trước quả báo khốc liệt:</h2>
+        
+        <p>Kính lạy Đức Thế Tôn, kính lạy Sư Phụ! Hôm nay con quỳ nơi đây, toàn thân run rẩy, bàng hoàng hổ thẹn và kinh sợ tột cùng khi soi rọi lại tảng đá cố chấp lì lợm, thói quen cố phạm ngoan cố đang bám chặt trong đáy sâu tâm thức con từ vô lượng kiếp đến nay:</p>
+        
+        <ul>
+            <li>Con xin dập đầu sám hối vì trong muôn kiếp luân hồi cũng như trong đời này, con đã mang nặng tâm cố chấp, ngang bướng, lì lợm, chỉ thấy mình là đúng: Hễ con đưa ra một quan điểm, ý kiến hay cách làm nào là con khăng khăng bám chặt lấy, không chịu lắng nghe lời góp ý của bất kỳ ai; ai nói chạm đến sai lầm của con là bản ngã con tự ái nhảy dựng lên, lập tức cãi miệng, tranh luận hơn thua; con bất chấp cảm xúc, quyền lợi và nỗi đau khổ của người khác chỉ để thỏa mãn cái tôi bướng bỉnh hẹp hòi của mình.</li>
+            <li>Con xin sám hối vì tội ác "Cố phạm – Biết sai mười mươi mà vẫn nhắm mắt làm liều": Đã bao lần tiếng chuông lương tâm rung lên cảnh báo hành vi đó là tội lỗi, tổn phước, nhưng vì đắm mê danh lợi, vì thỏa mãn cơn nóng giận, dục vọng hay sự ích kỷ, con đã cố tình đạp lên lương tâm để phạm tội; con còn xảo quyệt tự nghĩ ra trăm phương ngàn kế lý luận ngụy biện để bào chữa cho cái ác của mình, tự lừa dối chính mình và che mắt thế gian.</li>
+            <li>Con xin sám hối vì tâm ngoan cố không chịu nhận lỗi và sửa sai: Thay vì dũng cảm quỳ gối xin lỗi và ăn năn, con lại chỉ chăm chăm kết tội người khác, đổ vấy trách nhiệm cho hoàn cảnh; con biến mình thành kẻ ngang tàng, bướng bỉnh, đóng chặt cánh cửa hối cải khiến chư Phật, Bồ Tát và Sư Phụ dù thương xót cũng không thể nào đưa tay cứu vớt.</li>
+            <li>Con xin thấm nhuần sâu sắc và rùng mình kinh sợ trước những quả báo tàn khốc của tâm cố chấp, cố phạm:
+                <ul>
+                    <li>Người làm điều ác mà cố chấp bướng bỉnh thì quả báo phải đọa lạc vào đáy sâu địa ngục chịu cực hình rên xiết suốt hàng ngàn năm không có ngày ra;</li>
+                    <li>Cố chấp theo ý mình gieo đau khổ cho người thì đời sau chịu quả báo nghèo hèn cùng cực, bế tắc triền miên, làm gì cũng thất bại đổ vỡ, mãi mãi không ngóc đầu lên nổi;</li>
+                    <li>Đến khi phước hết nghiệp dội thì kêu trời trời không thấu, kêu Phật Phật không giúp nổi, bắt buộc phải trả quả báo đắng cay đến tận cùng xương tủy;</li>
+                    <li>Làm suy đồi hoàn toàn căn lành, biến thành kẻ đần độn u mê, bị muôn người xa lánh ghét bỏ, huệ mạng chôn vùi trong bóng tối vô minh!</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Giờ đây tỉnh ngộ trước sự nghiêm minh của nhân quả, con xin đem trọn thân mạng dập đầu mọp sát đất trước Đức Từ Phụ Thích Ca Mâu Ni Phật và Sư Phụ, tha thiết cầu xin Người từ bi tha thứ cho đứa con ngu muội khờ dại!</p>
+
+        <h2>2. Lời thề đại nguyện dứt sạch cố chấp, đoạn trừ cố phạm và trọn đời cầu thị, vâng lời dạy trong vô lượng kiếp về sau:</h2>
+
+        <p>Trước tôn nhan Đấng Toàn Giác Vô Thượng Thích Ca Mâu Ni Phật và mười phương Chư Phật, con xin phát lời đại thệ nguyện kiên cố khắc sâu vào tận xương tủy và tạng thức:</p>
+
+        <ul>
+            <li>Nguyện cho con từ nay cho đến vô lượng kiếp về sau luôn khắc sâu định lý: Cố chấp bướng bỉnh là mầm mống dẫn thẳng xuống địa ngục; Khiêm cung, biết vâng lời và dũng cảm nhận lỗi là cội nguồn của mọi phước đức và giải thoát:
+                <ul>
+                    <li>Quyết tâm bẻ gãy tận gốc tính khí lì lợm, ngang bướng, cãi chày cãi cối;</li>
+                    <li>Quyết không bao giờ cho phép bản thân dung túng cho một mảy may tâm niệm cố tình phạm lỗi hay tự biện hộ cho cái sai.</li>
+                </ul>
+            </li>
+            <li>Con nguyện thực hành hạnh Vâng Lời và Cầu Thị tuyệt đối:
+                <ul>
+                    <li>Luôn ghi nhớ mình là phàm phu đầy dẫy lỗi lầm vi tế, nên luôn mở rộng lòng lắng nghe lời chỉ dạy của Sư Phụ, của các bậc trưởng thượng, của huynh đệ và cả lời chê bai của người đời;</li>
+                    <li>Hễ ai chỉ ra điều sai của con, con nguyện lập tức cúi đầu tri ân, chân thành nhận lỗi, dẹp sạch tự ái và quyết chí sửa đổi ngay lập tức;</li>
+                    <li>Tuyệt đối không cãi lại, không tìm lý do biện minh, không đổ lỗi cho người khác hay hoàn cảnh.</li>
+                </ul>
+            </li>
+            <li>Con nguyện giữ gìn thanh quy giới luật và tiếng nói lương tâm:
+                <ul>
+                    <li>Đứng trước mọi cám dỗ hay nghịch cảnh, hễ thấy việc đó có dấu hiệu sai quấy, bất thiện, gây tổn hại cho người khác dù nhỏ như hạt bụi, con nguyện dứt khoát dừng tay ngay lập tức, thà chịu thiệt thòi thân mạng chứ quyết không cố phạm;</li>
+                    <li>Nguyện dùng Chánh Pháp soi rọi từng suy nghĩ, lời nói, hành vi mỗi ngày; luôn tự hỏi: "Việc này làm vì cái tôi hay vì lợi ích chung? Có đang cố chấp ý riêng hay không?".</li>
+                </ul>
+            </li>
+            <li>Con nguyện lấy Tâm Cầu Thị Nhu Hòa làm nền tảng cho công phu thiền định:
+                <ul>
+                    <li>Buông xả mọi định kiến, thành kiến, giáo điều cứng nhắc;</li>
+                    <li>Giữ tâm hồn mềm mại, thuần lương, rỗng rang như hư không để đón nhận tuệ giác vô ngã của Phật Pháp;</li>
+                    <li>Nguyện đời đời kiếp kiếp luôn là người học trò hiền lành, dễ dạy, trung kiên và biết vâng lời bậc Minh sư chỉ dẫn.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Cầu xin uy đức Tam Bảo chứng minh và gia hộ:</h2>
+
+        <p>Cúi xin Đức Bổn Sư Thích Ca Mâu Ni Phật, Mười Phương Chư Phật, Chư Đại Bồ Tát và Sư Phụ từ bi chứng minh cho tấc lòng sám hối và lời đại thệ nguyện sắt son tự đáy lòng con; gia hộ cho con đập tan tảng đá cố chấp, ngang bướng, lì lợm sâu dày trong tạng thức; ban cho con trái tim nhu nhược hiền lành trước điều thiện, dũng mãnh kiên quyết đoạn trừ điều ác, để đời đời kiếp kiếp con luôn đi đúng đường Chánh Pháp, trở thành bậc chân nhân đức hạnh và cùng muôn loài viên thành Vô Thượng Giác Ngộ.</p>
+    </div>
+</body>
+</html>
